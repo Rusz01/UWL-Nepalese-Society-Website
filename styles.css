@@ -186,9 +186,22 @@
 }
 
 /* footer logo */
-.footer-left > img{
+.footer-left{
+   display: flex;
+   gap: 20px;
+}
+
+.footer-left-nepsoc > img, .footer-left-logo > img{
    width: 180px;
+}
+
+.footer-left-nepsoc > img{
    border-radius: 100%;
+}
+
+.footer-left-logo > img{
+   display: block;
+   padding: 15px 20px;
 }
 
 /* footer contact */
