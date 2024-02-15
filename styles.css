@@ -252,6 +252,61 @@
 }
 
 
+/* member page */
+.member-page{
+   text-align: center;
+   padding: 0px 50px;
+}
+
+.member-page > h2{
+   margin-bottom: 10px;
+   font-size: 35px;
+}
+
+.member-page > h4{
+   font-size: 20px;
+   font-weight: 500;
+}
+
+.member-page-cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   }
+
+.member-card{
+   width: 400px;
+   padding: 50px;
+   text-align: center;
+} 
+
+.member-card > img{
+   border-radius: 50%;
+   margin-right: auto;
+   margin-left: auto;
+   width: 280px;
+   margin-bottom: 10px;
+}
+
+.member-card > h3{
+   margin-bottom: 5px;
+}
+
+.member-card > h4{
+   opacity: 0.5;
+   margin-bottom: 5px;
+}
+
+.member-card > p{
+   padding: 0px 10px;
+}
+
+.social-media-icon > a > img{
+   width: 20px;
+   filter: contrast(0%) brightness(0%);
+   padding: 15px 8px;
+}
+
 
 /* ---- Single Event Page ---- */
 .event-single-page-content {
