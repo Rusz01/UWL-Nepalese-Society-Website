@@ -1,20 +1,21 @@
    {% extends "base.html"%}
    {% block title%}Home{% endblock title%}
    {% block body%}
+   {% load static %}
    <!-- home body -->
    <section>
       <!-- top part -->
       <div class="home-heading">
          <h1>UWL<br> <span>Nepalese <br> Scoiety</span></h1>
-         <img src="img/team-potrait.jpg" alt="Picture of UWL Nepalese Society Board Members">
+         <img src="{% static 'img/team-potrait.jpg' %}" alt="Picture of UWL Nepalese Society Board Members">
       </div>
 
       <!-- about part -->
       <div class="about">
          <div class="about-img">
-            <img src="img/team.jpg" alt="">
-            <img src="img/about-team-potrait.jpg" alt="">
-            <img src="img/abc.jpg" alt="">
+            <img src="{% static 'img/team.jpg' %}" alt="">
+            <img src="{% static 'img/about-team-potrait.jpg' %}" alt="">
+            <img src="{% static 'img/abc.jpg' %}" alt="">
          </div>
          <div class="about-text">
             <h3>About</h3>
@@ -34,7 +35,7 @@
          <!-- event box -->
          <div class="event-box">
             <div class="event-box-img">
-               <img src="img/new year.jpg" alt="">
+               <img src="{% static 'img/new year.jpg' %}" alt="">
             </div>
             <div class="event-box-text">
                <h3>New Year!!</h3>
@@ -49,7 +50,7 @@
 
          <div class="event-box">
             <div class="event-box-img">
-               <img src="img/momo.jpg" alt="">
+               <img src="{% static 'img/momo.jpg' %}" alt="">
             </div>
             <div class="event-box-text">
                <h3>M & M</h3>
@@ -64,7 +65,7 @@
 
          <div class="event-box">
             <div class="event-box-img">
-               <img src="img/meet.jpg" alt="">
+               <img src="{% static 'img/meet.jpg' %}" alt="">
             </div>
             <div class="event-box-text">
                <h3>Meet and Greet</h3>
