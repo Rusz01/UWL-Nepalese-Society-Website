@@ -422,10 +422,11 @@ padding-bottom: 5px;
    font-size: 15px;
    letter-spacing: 0.56px;
    font-weight: 400;
+   text-indent: 10px;
 }
 
 .contact-img > img{
-   height: 540px;
+   height: 590px;
 }
 
 .contact-form>form>button{
