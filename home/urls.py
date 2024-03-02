@@ -8,4 +8,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('event', views.event, name='event'),
     path('members', views.members, name='members'),
+
+    # For single page event
+    path('singlePageEvent', views.singlePageEvent, name='singlePageEvent'),
 ]

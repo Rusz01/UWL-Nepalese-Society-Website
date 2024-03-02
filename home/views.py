@@ -12,3 +12,6 @@ def contact(request):
 
 def members(request):
    return render(request, 'members.html')
+
+def singlePageEvent(request):
+   return render(request, 'single-page-event.html')

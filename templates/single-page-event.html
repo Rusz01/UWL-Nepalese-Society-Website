@@ -2,10 +2,11 @@
    
 {% block body%}
 
+{% load static %}   
    <section class="event-single-page">
       <div class="event-single-page-content">
       <h3>New Year</h3>
-      <img src="img/abc.jpg" alt="">
+      <img src="{% static 'img/abc.jpg' %}" alt="">
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae amet necessitatibus ex ullam temporibus.
          Eum nobis quae libero officia dignissimos. Dolorum, ab dicta adipisci quo ipsum voluptatem saepe vitae ipsa
          alias libero deserunt laudantium eius est esse sit delectus maxime labore voluptates eligendi dolor. Incidunt
@@ -34,14 +35,14 @@
       <h4>Upcomming Events</h4>
       <div class="sb-ue-events">
          <a href="">
-         <img src="img/new year.jpg" alt="">
+         <img src="{% static 'img/new year.jpg' %}" alt="">
          <h2>New Year</h2>
       </a>
       </div>
 
       <div class="sb-ue-events">
          <a href="">
-         <img src="img/meet.jpg" alt="">
+         <img src="{% static 'img/meet.jpg' %}" alt="">
          <h2>Meet</h2>
       </a>
       </div>
