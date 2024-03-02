@@ -9,6 +9,9 @@ urlpatterns = [
     path('event', views.event, name='event'),
     path('members', views.members, name='members'),
 
-    # For single page event
+    # For single event page 
     path('singlePageEvent', views.singlePageEvent, name='singlePageEvent'),
+
+    # For all recent event page
+    path('allRecentEvents', views.allRecentEvents, name='allRecentEvents'),
 ]

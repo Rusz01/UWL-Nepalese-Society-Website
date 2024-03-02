@@ -15,3 +15,6 @@ def members(request):
 
 def singlePageEvent(request):
    return render(request, 'single-page-event.html')
+
+def allRecentEvents(request):
+   return render(request, 'all-recent-events.html')
