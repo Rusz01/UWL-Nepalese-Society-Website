@@ -115,10 +115,11 @@
 
 
 
-/* upcomming event */
+/* events */
 .event {
    margin-top: 30px;
    padding: 10px 50px;
+   margin-bottom: 20px
 }
 
 .event>h2 {
@@ -134,12 +135,12 @@
    margin-bottom: 10px;
 }
 
-/* upcomming event > img */
+/* events > img */
 .event-box-img>img {
    width: 250px;
 }
 
-/* upcomming event > event text */
+/* events > event text */
 .event-box-text {
    padding: 50px 20px;
    margin-left: 50px;
@@ -156,7 +157,7 @@
    padding-top: 10px;
 }
 
-/* upcomming event > link */
+/* event > link */
 .event-box-text>a {
    position: absolute;
    text-decoration: none;
@@ -165,6 +166,23 @@
    background-color: var(--grey);
    padding: 10px;
    margin-top: 25px;
+}
+
+/* event page > upcomming events > see more btn */
+
+.all-Event-Btn{
+   margin: auto;
+   margin-top: 20px;
+   width: 200px;
+}
+
+.all-Event-Btn>a {
+   text-decoration: none;
+   color: var(--black);
+   font-size: 20px;
+   background-color: var(--grey);
+   padding: 10px;
+   border-radius: 20px;
 }
 
 /* footer */
