@@ -1,11 +1,16 @@
-from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404, render
+from home.models import Event
+from home.models import RecentEvent
 # Create your views here.
 def home(request):
-   return render(request, 'index.html')
+   pics=Event.objects.all()
+   rimage = RecentEvent.objects.all()
+   return render(request, 'index.html', {"pics": pics, "rimage": rimage})
 
 def event(request):
-   return render(request, 'event.html')
+   pics=Event.objects.all()
+   rimage = RecentEvent.objects.all()
+   return render(request, 'event.html', {"pics": pics, "rimage": rimage})
 
 def contact(request):
    return render(request, 'contact.html')

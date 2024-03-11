@@ -6,7 +6,6 @@
 
    {% load static %}   
    <!-- home body -->
-   <section>
       <!-- top part -->
       <div class="home-heading">
          <h1>UWL<br> <span>Nepalese <br> Scoiety</span></h1>
@@ -34,52 +33,22 @@
 
       <!-- upcomming event -->
       <div class="event">
-         <h2>Upcomming Events</h2>
-         <!-- event box -->
-         <div class="event-box">
-            <div class="event-box-img">
-               <img src="{% static 'img/new year.jpg' %}" alt="">
-            </div>
-            <div class="event-box-text">
-               <h3>New Year!!</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
-            </div>
-         </div>
-
-         <div class="event-box">
-            <div class="event-box-img">
-               <img src="{% static 'img/momo.jpg' %}" alt="">
-            </div>
-            <div class="event-box-text">
-               <h3>M & M</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
-            </div>
-         </div>
-
-         <div class="event-box">
-            <div class="event-box-img">
-               <img src="{% static 'img/meet.jpg' %}" alt="">
-            </div>
-            <div class="event-box-text">
-               <h3>Meet and Greet</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
-            </div>
-         </div>
+         <h2>Upcoming Events</h2>
       </div>
+      <div class="containers">
+         {% for x in pics %}
+            <div class="event-box">
+               <div class="event-box-img">
+                  <img src="{{ x.image.url }}" >
+               </div>
+               <div class="event-box-text">
+                  <h3>{{ x.heading }}</h3>
+                  <p>{{ x.caption }}</p>
+                  <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
+               </div>
+            </div>
+         {% endfor %}
+      </div>
+
    </section>
    {% endblock body%}
