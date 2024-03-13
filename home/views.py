@@ -18,8 +18,11 @@ def contact(request):
 def members(request):
    return render(request, 'members.html')
 
-def singlePageEvent(request):
-   return render(request, 'single-page-event.html')
+def singlePageEvent(request, image_id):
+   pics=Event.objects.all()
+   single_event = get_object_or_404(RecentEvent, pk=image_id)
+   return render(request, 'single-page-event.html',{'single_event': single_event, "pics":pics})
 
 def allRecentEvents(request):
-   return render(request, 'all-recent-events.html')
+   rimage= RecentEvent.objects.all()
+   return render(request, 'all-recent-events.html',{"rimage": rimage})

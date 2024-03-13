@@ -30,7 +30,7 @@
          <h2>Recent Events</h2>
      </div>
      <div class="containers">
-         {% for y in rimage %}
+         {% for y in rimage|slice:"3"%}
          <div class="event-box">
              <div class="event-box-img">
                  <img src="{{ y.image.url }}">
@@ -38,9 +38,11 @@
              <div class="event-box-text"> <!-- Added closing ">" -->
                  <h3>{{ y.heading }}</h3>
                  <p class="lead">{{ y.caption }}</p>
+                 <a href="{% url 'singlePageEvent' image_id=y.id %}">See More -></a>
              </div> <!-- Added closing "</div>" -->
          </div>
          {% endfor %}
+         <a href="{% url 'allRecentEvents' %}">View All</a> <!-- Link to 'allRecentEvents' HTML page -->
      </div>
 
    </div>

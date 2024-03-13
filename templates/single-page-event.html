@@ -5,45 +5,20 @@
 {% load static %}   
    <section class="event-single-page">
       <div class="event-single-page-content">
-      <h3>New Year</h3>
-      <img src="{% static 'img/abc.jpg' %}" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae amet necessitatibus ex ullam temporibus.
-         Eum nobis quae libero officia dignissimos. Dolorum, ab dicta adipisci quo ipsum voluptatem saepe vitae ipsa
-         alias libero deserunt laudantium eius est esse sit delectus maxime labore voluptates eligendi dolor. Incidunt
-         totam nihil, porro quibusdam natus laudantium. Beatae tempora voluptate totam laboriosam recusandae nobis, quas
-         vero doloremque itaque eos facilis soluta non molestias, sapiente maiores accusantium earum natus debitis,
-         expedita magnam cumque maxime quibusdam et aliquid? Velit officia veniam voluptate pariatur ipsa laborum non
-         similique, optio suscipit esse? Ad repellat sequi voluptatibus minima sint quidem assumenda obcaecati alias,
-         <br> <br>
-         quaerat quod est architecto, non dolores reiciendis nisi nam, eaque atque. Dolorum repudiandae cupiditate alias
-         nostrum distinctio velit optio nulla enim exercitationem ad, iste rerum sunt placeat voluptatibus.
-         Necessitatibus ipsum eligendi voluptas dicta, at amet tempora nemo illo maxime non fugit distinctio facilis
-         aspernatur deleniti veniam porro ipsa neque fugiat, laboriosam est voluptatem nihil! Cum sit soluta placeat
-         repudiandae nemo qui eligendi veniam optio ipsum voluptas, blanditiis harum? Molestiae quibusdam sit ea harum
-         similique alias placeat repellat neque et aliquid, consequuntur quidem eum. Exercitationem porro, omnis
-         temporibus inventore velit odit.
-         <br> <br>
-         Corrupti, necessitatibus quidem ducimus, maxime libero obcaecati inventore eveniet odio tenetur vel velit
-         voluptatum illum assumenda, consequatur incidunt. Dolor ex voluptatibus ut numquam sapiente! Iste sed atque
-         repellat rerum sequi! Suscipit natus ipsa minima! Praesentium dolores, ut libero quas, deleniti eius dolor
-         temporibus iste non in sapiente sit maxime veniam corporis fugit quisquam facere dicta labore ab delectus!
-      </p>
+      <h3>{{single_event.heading}}</h3>
+      <img src="{{ single_event.image.url}}" alt="">
+      <p>{{ single_event.caption }}</p>
 
    </div>
 
    <div class="event-single-page-sidebar">
       <h4>Upcomming Events</h4>
       <div class="sb-ue-events">
+         {% for x in pics|slice:"2" %}
          <a href="">
-         <img src="{% static 'img/new year.jpg' %}" alt="">
-         <h2>New Year</h2>
-      </a>
-      </div>
-
-      <div class="sb-ue-events">
-         <a href="">
-         <img src="{% static 'img/meet.jpg' %}" alt="">
-         <h2>Meet</h2>
+         <img src="{{ x.image.url }}" alt="">
+         <h2>{{ x.heading }}</h2>
+         {% endfor %}
       </a>
       </div>
       
