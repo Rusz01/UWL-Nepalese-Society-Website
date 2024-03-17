@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('contact', views.contact, name='contact'),
     path('event', views.event, name='event'),
-    path('members', views.members, name='members'),
+    path('members/', views.members, name='members'),
 
     # For single event page 
     path('singlePageEvent', views.singlePageEvent, name='singlePageEvent'),
