@@ -468,3 +468,30 @@ padding-bottom: 5px;
    width: 1081px ;
    height: 450px;
 }
+
+.pagination {
+   text-align: center; /* Center the pagination links */
+   margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.pagination-list {
+   display: inline-block; /* Display pagination links inline */
+   list-style: none; /* Remove default list styling */
+   padding: 0;
+}
+
+.pagination-list li {
+   display: inline;
+   margin-right: 5px; /* Adjust spacing between pagination elements */
+}
+
+.pagination-list li a {
+   font-size: 40px; /* Adjust text size */
+}
+
+.pagination-list li.active span {
+   font-weight: bold; /* Style for active page number */
+}
+
+
+
