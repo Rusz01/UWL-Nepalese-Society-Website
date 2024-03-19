@@ -4,17 +4,19 @@
 
 {% block body %}
 
-{% load static %}  
-   <!-- home body -->
-   <section>
-      <div class="member-page">
-         <h2>Who We Are? Meet Our Team!</h2>
-
-         <div class="member-page-cards">
-            {% for y in year %}
-            <h3>{{ y.member_year }}</h3>
+{% load static %}
+<!-- home body -->
+<section>
+    <div class="member-page">
+        <h2>Who We Are? Meet Our Team!</h2>
+        {% for y in year %}
+        <h3>{{ y.member_year }}</h3>
+        <div class="member-page-cards">
+            
+            {% for x in pics %}
             <div class="year-members">
-                {% for x in pics %}
+                
+                
                 {% if x.date_year == y.member_year %}
                 <div class="member-card">
                     <img src="{{ x.image.url }}" alt="">
@@ -28,11 +30,12 @@
                     </div>
                 </div>
                 {% endif %}
-                {% endfor %}
+                
             </div>
+            
             {% endfor %}
         </div>
-        
-      </div>
-   </section>
+        {% endfor %}
+    </div>
+</section>
 {% endblock body %}
