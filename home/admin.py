@@ -9,7 +9,7 @@ class ChoiceInline(admin.StackedInline):
     extra = 1
 
 # class for showing members and their lists inline
-class MemberAdmin(admin.ModelAdmin):
+class Member_detail(admin.ModelAdmin):
     fieldsets = [
         (None, {"fields": ["member_year"]}),
         ("Date information", {"fields": ["date"], "classes": ["collapse"]}),
@@ -20,4 +20,4 @@ class MemberAdmin(admin.ModelAdmin):
     list_filter = ["date"]
     search_fields = ["member_year"]
 
-admin.site.register(Members,  MemberAdmin)
+admin.site.register(Members,  Member_detail)

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Member_detail
+from .models import Member_detail, Members
+
 
 # Create your views here.
 def home(request):
@@ -13,7 +14,8 @@ def contact(request):
 
 def members(request):
     pics = Member_detail.objects.all()
-    return render(request, 'members.html',{"pics":pics})
+    year = Members.objects.all()
+    return render(request, 'members.html',{"pics":pics, "year": year})
 
 def singlePageEvent(request):
    return render(request, 'single-page-event.html')
