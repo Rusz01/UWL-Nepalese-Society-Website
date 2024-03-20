@@ -19,6 +19,10 @@ class Members(models.Model):
     def was_recently_added(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date <= now
+    
+    # Ordering member_year in descending order
+    class Meta:
+        ordering = ['-member_year']  
 
 
 # creating a class "List" to insert members details 
@@ -33,8 +37,8 @@ class Member_detail(models.Model):
     title = models.CharField(max_length=25, blank=True, null=True)
     date_year = models.CharField(max_length=20, blank=True, null=True)
     details_text = models.CharField(max_length=150, blank=True, null=True)
-    socials_link = models.URLField(blank=True, null=True)
-
+    instagram_link = models.URLField(blank=True, null=True)
+    linkedln_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name

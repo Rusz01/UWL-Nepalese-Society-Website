@@ -11,12 +11,9 @@
         <h2>Who We Are? Meet Our Team!</h2>
         {% for y in year %}
         <h3>{{ y.member_year }}</h3>
-        <div class="member-page-cards">
-            
+        <div class="member-page-cards">          
             {% for x in pics %}
-            <div class="year-members">
-                
-                
+            <div class="year-members">              
                 {% if x.date_year == y.member_year %}
                 <div class="member-card">
                     <img src="{{ x.image.url }}" alt="">
@@ -26,13 +23,16 @@
                         <p>{{ x.details_text }}</p>
                     </div>
                     <div class="social-media-icon">
-                        <a href=""><img src="{{ x.social_link }}" alt=""></a>
+                        {% if x.instagram_link %}
+                            <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                        {% endif %}
+                        {% if x.linkedln_link %}
+                            <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn"></a>
+                        {% endif %}
                     </div>
                 </div>
-                {% endif %}
-                
-            </div>
-            
+                {% endif %}               
+            </div>          
             {% endfor %}
         </div>
         {% endfor %}
