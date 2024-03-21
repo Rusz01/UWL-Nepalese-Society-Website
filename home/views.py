@@ -1,7 +1,11 @@
 from django.shortcuts import get_object_or_404, render
-from home.models import Event
-from home.models import RecentEvent
+from home.models import Event, Members, RecentEvent, Contact, Member_detail
 from django.core.paginator import Paginator
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.conf import settings
+
+
 # Create your views here.
 def home(request):
    pics=Event.objects.all().order_by('-EventCreatedDate')
@@ -14,10 +18,20 @@ def event(request):
    return render(request, 'event.html', {"pics": pics, "rimage": rimage})
 
 def contact(request):
+   if request.method=="POST":
+      name = request.POST['name']
+      email = request.POST['email']
+      number = request.POST['number']
+      message = request.POST['message']
+      ins = Contact(name=name, email=email, number=number, message=message)
+      ins.save()
+
    return render(request, 'contact.html')
 
 def members(request):
-   return render(request, 'members.html')
+    pics = Member_detail.objects.all()
+    year = Members.objects.all()
+    return render(request, 'members.html',{"pics":pics, "year": year})
 
 def singlePageEvent(request, image_id):
    pics=Event.objects.all()
