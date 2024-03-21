@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+   
+{% block body%}
+
+{% load static %}   
+   <section class="event-single-page">
+      <div class="event-single-page-content">
+      <h3>{{single_event.heading}}</h3>
+      <img src="{{ single_event.image.url}}" alt="">
+      <p>{{ single_event.caption | safe}}</p>
+
+   </div>
+
+   <div class="event-single-page-sidebar">
+      <h4>Upcomming Events</h4>
+      <div class="sb-ue-events">
+         {% for x in pics|slice:"2" %}
+         <a href="">
+         <img src="{{ x.image.url }}" alt="">
+         <h2>{{ x.heading }}</h2>
+         {% endfor %}
+      </a>
+      </div>
+      
+   </div>
+   </section>
+   {% endblock body%}
