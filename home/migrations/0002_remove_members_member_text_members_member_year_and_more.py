@@ -35,4 +35,10 @@ class Migration(migrations.Migration):
         migrations.DeleteModel(
             name='List',
         ),
+
+          migrations.RenameField(
+            model_name='contact',
+            old_name='subject',
+            new_name='message',
+        ),
     ]

@@ -21,11 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-SECRET_KEY = 'django-insecure-rf5u1(8w4j0z%g#!3&#4jl()cml6xxii6)%pv@o9qnxlxvpj'
-=======
 SECRET_KEY = 'django-insecure-rf5u1(8w4j0z%g#!3&#4jl()cmslv6xxie6)%pv@o9qnxlxvpj'
->>>>>>> main
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,20 +32,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-    'home',
-=======
->>>>>>> main
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-=======
     'home',
->>>>>>> main
 ]
 
 MIDDLEWARE = [
@@ -139,9 +128,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
-=======
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
->>>>>>> main

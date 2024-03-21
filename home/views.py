@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
-from home.models import Contact, Member_detail, Members
+from home.models import Contact, Member_detail
+from .models import Members
 
 
 # Create your views here.
