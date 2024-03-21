@@ -1,86 +1,43 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
 
-{% block title%}Board Members{% endblock title%}
+{% block title %}Board Members{% endblock title %}
 
-{% block body%}
+{% block body %}
 
-{% load static %}  
-   <!-- home body -->
-   <section>
-      <div class="member-page">
-         <h2>Who We Are? Meet Out Team!</h2>
-         <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi fugiat odio aut odit nemo repellendus
-            harum, accusamus unde.</h4>
-
-<div class="member-page-cards">
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-         <div class="member-card">
-            <img src="{% static 'img/founder.jpg' %}" alt="">
-            <h3>Rabin Basnet</h3>
-            <h4>Founder</h4>
-            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam consequatur minima odio cupiditate
-               illo cumque quia tempore unde eligendi amet. Nobis necessitatibus suscipit nam tenetur!"</p>
-               <div class="social-media-icon">
-                  <a href=""><img src="{% static 'img/instagram.png' %}" alt=""></a>
-                  <a href=""><img src="{% static 'img/linkedin.png' %}" alt=""></a>
-               </div>
-         </div>
-
-      </div>
-      </div>
-   </section>
-   {% endblock body%}
+{% load static %}
+<!-- home body -->
+<section>
+    <div class="member-page">
+        <h2>Who We Are? Meet Our Team!</h2>
+        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi fugiat odio aut odit nemo repellendus
+         harum, accusamus unde.</h4>
+        {% for y in year %}
+        <h3>{{ y.member_year }}</h3>
+        <div class="member-page-cards">          
+            {% for x in pics %}
+            <div class="year-members">              
+                {% if x.date_year == y.member_year %}
+                <div class="member-card">
+                    <img src="{{ x.image.url }}" alt="">
+                    <div class="member-details">
+                        <h3>{{ x.name }}</h3>
+                        <h4>{{ x.title }}</h4>
+                        <p>{{ x.details_text }}</p>
+                    </div>
+                    <div class="social-media-icon">
+                        {% if x.instagram_link %}
+                            <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                        {% endif %}
+                        {% if x.linkedln_link %}
+                            <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn"></a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}               
+            </div>          
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock body %}
