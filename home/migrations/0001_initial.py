@@ -13,6 +13,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Event',
+            fields=[
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('image', models.ImageField(upload_to='image')),
+                ('heading', models.CharField(blank=True, max_length=100, null=True)),
+                ('caption', models.CharField(max_length=1000)),
+                ('booking_link', models.URLField(blank=True, null=True)),
+            ],
+        ),
+
+        migrations.CreateModel(
             name='Contact',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -37,8 +48,15 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('image', models.ImageField(upload_to='image')),
                 ('heading', models.CharField(blank=True, max_length=100, null=True)),
-                ('list_text', models.CharField(max_length=200)),
-                ('member', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.members')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='RecentEvent',
+            fields=[
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('image', models.ImageField(upload_to='recentimage')),
+                ('heading', models.CharField(blank=True, max_length=100, null=True)),
+                ('caption', models.CharField(max_length=1000)),
             ],
         ),
     ]

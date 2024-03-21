@@ -1,7 +1,12 @@
 from django.contrib import admin
-from home.models import Contact, Members, Member_detail
+from home.models import Event
+from home.models import RecentEvent, Event, Contact, Members, Member_detail
 
 # Register your models here.
+
+# Event and Recent Event
+admin.site.register(Event)
+admin.site.register(RecentEvent)
 
 # Contact admin
 admin.site.register(Contact)

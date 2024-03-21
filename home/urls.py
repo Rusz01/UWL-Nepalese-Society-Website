@@ -6,11 +6,13 @@ urlpatterns = [
 #    URLS for Pages
     path('', views.home, name='home'),
     path('contact', views.contact, name='contact'),
-    path('event', views.event, name='event'),
+    path('event/', views.event, name='event'),
     path('members/', views.members, name='members'),
 
+
+
     # For single event page 
-    path('singlePageEvent', views.singlePageEvent, name='singlePageEvent'),
+    path('image/<int:image_id>/', views.singlePageEvent, name='singlePageEvent'),
 
     # For all recent event page
     path('allRecentEvents', views.allRecentEvents, name='allRecentEvents'),
