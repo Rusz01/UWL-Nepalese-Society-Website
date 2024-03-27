@@ -43,7 +43,7 @@
                </div>
                <div class="event-box-text">
                   <h3>{{ x.heading }}</h3>
-                  <p>{{ x.caption }}</p>
+                  <p>{{ x.caption | safe}}</p>
                   <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
                </div>
             </div>

@@ -7,7 +7,7 @@
       <div class="event-single-page-content">
       <h3>{{single_event.heading}}</h3>
       <img src="{{ single_event.image.url}}" alt="">
-      <p>{{ single_event.caption }}</p>
+      <p>{{ single_event.caption | safe }}</p>
 
    </div>
 
