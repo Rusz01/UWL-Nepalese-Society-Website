@@ -19,7 +19,7 @@
             </div>
             <div class="event-box-text">
                <h3>{{ x.heading }}</h3>
-               <p>{{ x.caption }}</p>
+               <p>{{ x.caption | safe }}</p>
                <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
             </div>
          </div>
@@ -37,7 +37,7 @@
              </div>
              <div class="event-box-text"> <!-- Added closing ">" -->
                  <h3>{{ y.heading }}</h3>
-                 <p class="lead">{{ y.caption }}</p>
+                 <p class="lead">{{ y.caption | safe}}</p>
                  <a href="{% url 'singlePageEvent' image_id=y.id %}">See More -></a>
              </div> <!-- Added closing "</div>" -->
          </div>
