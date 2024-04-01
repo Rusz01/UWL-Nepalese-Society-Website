@@ -44,3 +44,7 @@ def allRecentEvents(request):
    page_number = request.GET.get('page')
    page_obj = paginator.get_page(page_number)
    return render(request, 'all-recent-events.html', {'page_obj': page_obj})
+
+# Developer Page
+def developer(request):
+   return render(request, 'developer.html')

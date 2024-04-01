@@ -269,6 +269,10 @@
    padding-bottom: 25px;
 }
 
+.footer>p>a{
+   color: #BDBDBD;
+}
+
 
 /* member page */
 .member-page{
@@ -503,3 +507,15 @@ padding-bottom: 5px;
 
 
 
+/* Developer Team */
+.developer > h2{
+   text-align: center;
+   font-weight: 300;
+   font-size: 40px;
+   margin: 20px 0px;
+}
+
+.developer > h2 > span{
+   font-weight: 500;
+   color: var(--black);
+}
