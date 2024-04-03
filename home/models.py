@@ -65,7 +65,7 @@ class Member_detail(models.Model):
     name = models.CharField(max_length=25, blank=True, null=True)
     title = models.CharField(max_length=25, blank=True, null=True)
     date_year = models.CharField(max_length=20, blank=True, null=True)
-    details_text = models.CharField(max_length=150, blank=True, null=True)
+    details_text = models.TextField(blank=True, null=True)
     instagram_link = models.URLField(blank=True, null=True)
     linkedln_link = models.URLField(blank=True, null=True)
 
