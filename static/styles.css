@@ -3,6 +3,7 @@
    --black: #333333;
    --white: #ffffff;
    --grey: #BDBDBD;
+   --darkgrey: #6a6a6a;
    --bgGrey: #FBFBFB;
 }
 
@@ -123,7 +124,7 @@
 }
 
 .event>h2 {
-   font-size: 60px;
+   font-size: 45px;
    font-weight: 300;
 }
 
@@ -131,8 +132,7 @@
    display: flex;
    padding: 10px 0px;
    background-color: var(--bgGrey);
-   margin-top: 10px;
-   margin-bottom: 10px;
+   margin: 20px;
 }
 
 /* events > img */
@@ -142,13 +142,13 @@
 
 /* events > event text */
 .event-box-text {
-   padding: 50px 20px;
+   padding: 0px 20px;
    margin-left: 50px;
 }
 
 .event-box-text>h3 {
    font-size: 40px;
-   color: var(--grey);
+   color: var(--black);
    font-weight: 300;
 }
 
@@ -165,10 +165,10 @@
    font-size: 20px;
    background-color: var(--grey);
    padding: 10px;
-   margin-top: 25px;
+   margin-top: 15px;
 }
 
-/* event page > upcomming events > see more btn */
+/* event page > recent events > see more btn */
 
 .all-Event-Btn{
    margin: auto;
@@ -177,12 +177,13 @@
 }
 
 .all-Event-Btn>a {
-   text-decoration: none;
    color: var(--black);
    font-size: 20px;
-   background-color: var(--grey);
    padding: 10px;
-   border-radius: 20px;
+}
+
+.all-Event-Btn>a:hover{
+   color: var(--darkgrey);
 }
 
 /* footer */

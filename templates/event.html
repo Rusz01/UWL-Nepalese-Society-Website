@@ -8,9 +8,9 @@
 <section>
 
    <!-- upcomming event -->
-   <div class="event">
+ <div class="event">
       <h2>Upcoming Events</h2>
-   </div>
+   
    <div class="containers">
       {% for x in pics %}
          <div class="event-box">
@@ -25,10 +25,10 @@
          </div>
       {% endfor %}
    </div>
-
-      <div class="event">
+</div>
+   <div class="event">
          <h2>Recent Events</h2>
-     </div>
+     
      <div class="containers">
          {% for y in rimage|slice:"3"%}
          <div class="event-box">
@@ -42,9 +42,11 @@
              </div> <!-- Added closing "</div>" -->
          </div>
          {% endfor %}
-         <a href="{% url 'allRecentEvents' %}">View All</a> <!-- Link to 'allRecentEvents' HTML page -->
+         
      </div>
-
+     <div class="all-Event-Btn"> 
+     <a href="{% url 'allRecentEvents' %}">View All</a> <!-- Link to 'allRecentEvents' HTML page -->
+   </div>
    </div>
 </section>
 {% endblock body%}
