@@ -525,7 +525,8 @@ padding-bottom: 5px;
    text-align: center;
    font-weight: 300;
    font-size: 40px;
-   margin: 20px 0px;
+   margin-top: 20px;
+   margin-bottom: 40px;
 }
 
 .developer > h2 > span{
