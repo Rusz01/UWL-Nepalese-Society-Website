@@ -13,7 +13,7 @@
       <h4>Upcomming Events</h4>
       <div class="sb-ue-events">
         {% for x in pics|slice:'2' %}
-          <a href="{{ x.booking_link }}">
+          <a href="{{ x.booking_link }}" target="_blank">
             <img src="{{ x.image.url }}" alt="" />
             <h2>{{ x.heading }}</h2>
           </a>
