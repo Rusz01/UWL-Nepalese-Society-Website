@@ -14,6 +14,11 @@
    font-family: "Roboto", sans-serif;
 }
 
+a{
+   text-decoration: none;
+   color: #333333;
+}
+
 /* navigations */
 .nav {
    height: 80px;
@@ -295,6 +300,7 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+   row-gap: 30px;
    }
 
 .member-card{
@@ -302,7 +308,9 @@
    text-align: center;
 } 
 
-.member-card > img{
+
+
+.member-card > a> img{
    object-fit: cover;
    border-radius: 50%;
    width: 280px;
@@ -319,29 +327,25 @@
 
 .member-details > h4{
    opacity: 0.5;
-   margin-bottom: 10px;
-}
-
-.member-details > p{
-   padding: 0px 5px;
+   margin-bottom: 5px;
 }
 
 .social-media-icon > a > img{
    width: 20px;
    filter: contrast(0%) brightness(0%);
-   padding: 15px 8px;
+   padding: 10px 8px 20px 8px;
 }
 
 
 .member-heading-year{
    margin-top: 20px;
-   margin-bottom: 10px;
+   margin-bottom: 40px;
    font-size: 40px;
 }
 
 .member-page > hr{
    border: 1px solid var(--black);
-   margin-bottom: 100px;
+   margin-top: 50px;
 }
 
 /* ---- Single Event Page ---- */
@@ -532,4 +536,48 @@ padding-bottom: 5px;
 .developer > h2 > span{
    font-weight: 500;
    color: var(--black);
+}
+
+
+/* Member Single Page */
+.member-single{
+   padding: 30px;
+   display: flex;
+   column-gap: 50px;
+}
+
+.member-single-left{
+   padding: 50px;
+
+}
+
+.member-single-left>img{
+   width: 450px;
+   height: 450px;
+   object-fit: contain;
+   display: absolute;
+}
+
+.member-single-right{
+   margin-top: auto;
+   margin-bottom: auto;
+   padding-right: 150px;
+}
+
+.member-single-right>h1{
+   font-size: 45px;
+   margin-bottom: 10px;
+}
+
+.member-single-right>h4{
+   opacity: 60%;
+   font-size: 20px;
+}
+
+.member-single-right>.social-media-icon{
+   margin-bottom: 20px;
+}
+
+.member-single-right>p{
+   font-size: 20px;
 }

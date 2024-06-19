@@ -48,3 +48,8 @@ def allRecentEvents(request):
 # Developer Page
 def developer(request):
    return render(request, 'developer.html')
+
+
+# Board Member Single Page
+def memberSingle(request):
+   return render(request, 'member-single.html')

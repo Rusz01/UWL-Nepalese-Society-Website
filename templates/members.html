@@ -17,11 +17,12 @@
           {% for x in pics %}
             {% if x.date_year == y.member_year %}
               <div class="member-card">
+                <a href="/member-single">
                 <img src="{{ x.image.url }}" alt="" />
                 <div class="member-details">
                   <h3>{{ x.name }}</h3>
                   <h4>{{ x.title }}</h4>
-                  <p>{{ x.details_text }}</p>
+                </a>
                 </div>
                 <div class="social-media-icon">
                   {% if x.instagram_link %}
