@@ -9,6 +9,7 @@ from django.contrib import admin
 class Members(models.Model):
     member_year = models.CharField(max_length=20, blank=True, null=True)
     date = models.DateTimeField("Date")
+
     def __str__(self):
         return self.member_year
     @admin.display(
@@ -16,6 +17,7 @@ class Members(models.Model):
         ordering="date",
         description='Recently Added',
     )
+    
     def was_recently_added(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date <= now

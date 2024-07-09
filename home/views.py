@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Member_detail, Members
 
 
@@ -22,3 +22,9 @@ def singlePageEvent(request):
 
 def allRecentEvents(request):
    return render(request, 'all-recent-events.html')
+
+# Board Member Single Page
+def memberSingle(request, image_id):
+   member = get_object_or_404(Member_detail, pk=image_id)
+   return render(request, 'member-single.html', {'member': member})
+   

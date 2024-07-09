@@ -1,0 +1,32 @@
+{% extends "base.html"%}
+
+{% block title %}{{ member.name }}{% endblock %}
+
+{% block body%}
+
+   {% load static %}  
+   
+<section class="member-single">
+    <div class="member-page-cards">          
+
+        <div class="member-single-left">
+            <img src="{{ member.image.url }}" alt="{{ member.name }}">
+        </div>
+
+        <div class="member-single-right">
+        <h1>{{ member.name }}</h1>
+        <h4>{{ member.title }}</h4>
+
+            <div class="social-media-icon">
+            <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram" /></a>
+
+            <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn" /></a>
+            <hr>
+        </div>
+            
+        <p>{{ member.details_text }}</p>
+
+    </div> 
+</section> 
+
+{% endblock %}

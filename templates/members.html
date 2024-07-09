@@ -7,32 +7,41 @@
 {% load static %}
 <!-- home body -->
 <section>
+
     <div class="member-page">
         <h2>Who We Are? Meet Our Team!</h2>
         {% for y in year %}
         <h3>{{ y.member_year }}</h3>
-        <div class="member-page-cards">          
+
+        <div class="member-page-cards">
             {% for x in pics %}
-            <div class="year-members">              
+
+            <div class="year-members">
                 {% if x.date_year == y.member_year %}
+
                 <div class="member-card">
-                    <img src="{{ x.image.url }}" alt="">
-                    <div class="member-details">
-                        <h3>{{ x.name }}</h3>
-                        <h4>{{ x.title }}</h4>
-                        <p>{{ x.details_text }}</p>
-                    </div>
+                    <a href="{% url 'member-single' image_id=x.id %}">
+                        <img src="{{ x.image.url }}" alt="{{ x.name }}">
+
+                        <div class="member-details">
+                            <h3>{{ x.name }}</h3>
+                            <h4>{{ x.title }}</h4>
+                        </div>
+                    </a>
+
+
                     <div class="social-media-icon">
                         {% if x.instagram_link %}
-                            <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+                        <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}"
+                                alt="Instagram"></a>
                         {% endif %}
                         {% if x.linkedln_link %}
-                            <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn"></a>
+                        <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn"></a>
                         {% endif %}
                     </div>
                 </div>
-                {% endif %}               
-            </div>          
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
         {% endfor %}
