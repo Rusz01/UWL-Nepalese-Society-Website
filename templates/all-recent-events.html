@@ -11,126 +11,37 @@
    <div class="event">
       <h2>Recent Events</h2>
       <!-- event box -->
+      {% for y in page_obj %}
       <div class="event-box">
          <div class="event-box-img">
-            <img src="{% static 'img/momo.jpg' %}" alt="">
+            <img src="{{ y.image.url }}" alt="">
          </div>
          <div class="event-box-text">
-            <h3>M & M</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="newyear.html">See More -></a>
+            <h3>{{ y.heading }}</h3>
+            <p class ="lead">{{ y.caption | safe}}</p>
+            <a href="{% url 'singlePageEvent' image_id=y.id %}">See More -></a>
          </div>
       </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/meet.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>Meet and Greet</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="ruszbaihya.com">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/momo.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>M & M</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="newyear.html">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/meet.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>Meet and Greet</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="ruszbaihya.com">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/momo.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>M & M</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="newyear.html">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/meet.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>Meet and Greet</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="ruszbaihya.com">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/momo.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>M & M</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="newyear.html">See More -></a>
-         </div>
-      </div>
-
-      <div class="event-box">
-         <div class="event-box-img">
-            <img src="{% static 'img/meet.jpg' %}" alt="">
-         </div>
-         <div class="event-box-text">
-            <h3>Meet and Greet</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-               iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-               optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-               similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-               beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-            <a href="ruszbaihya.com">See More -></a>
-         </div>
-      </div>
-
+      {% endfor %}
    </div>
+   <div class="pagination">
+      <ul class="pagination-list">
+          {% if page_obj.has_previous %}
+              <li><a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a></li>
+          {% endif %}
+  
+          {% for num in page_obj.paginator.page_range %}
+              {% if num == page_obj.number %}
+                  <li class="active"><span>{{ num }}</span></li>
+              {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                  <li><a href="?page={{ num }}">{{ num }}</a></li>
+              {% endif %}
+          {% endfor %}
+  
+          {% if page_obj.has_next %}
+              <li><a href="?page={{ page_obj.next_page_number }}">Next &rsaquo;</a></li>
+          {% endif %}
+      </ul>
+   </div> 
 </section>
 {% endblock body%}

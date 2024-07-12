@@ -1,85 +1,55 @@
-   {% extends "base.html"%}
+{% extends "base.html"%}
 
-   {% block title%}Home{% endblock title%}
+{% block title%}Home{% endblock title%}
 
-   {% block body%}
+{% block body%}
 
-   {% load static %}   
-   <!-- home body -->
-   <section>
-      <!-- top part -->
-      <div class="home-heading">
-         <h1>UWL<br> <span>Nepalese <br> Scoiety</span></h1>
-         <img src="{% static 'img/team-potrait.jpg' %}" alt="Picture of UWL Nepalese Society Board Members">
+{% load static %}   
+<!-- home body -->
+   <!-- top part -->
+   <div class="home-heading">
+      <h1>UWL<br> <span>Nepalese <br> Scoiety</span></h1>
+      <img src="{% static 'img/team-potrait.jpg' %}" alt="Picture of UWL Nepalese Society Board Members">
+   </div>
+
+   <!-- about part -->
+   <div class="about">
+      <div class="about-img">
+         <img src="{% static 'img/team.jpg' %}" alt="">
+         <img src="{% static 'img/about-team-potrait.jpg' %}" alt="">
+         <img src="{% static 'img/abc.jpg' %}" alt="">
       </div>
-
-      <!-- about part -->
-      <div class="about">
-         <div class="about-img">
-            <img src="{% static 'img/team.jpg' %}" alt="">
-            <img src="{% static 'img/about-team-potrait.jpg' %}" alt="">
-            <img src="{% static 'img/abc.jpg' %}" alt="">
-         </div>
-         <div class="about-text">
-            <h3>About</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor aspernatur cupiditate dignissimos qui
-               atque nesciunt repellendus explicabo quia sit fugiat quam, ducimus dolorem accusamus, rerum, commodi
-               obcaecati veniam. At numquam architecto deserunt, molestiae ea dolore doloremque impedit saepe totam
-               inventore porro quaerat reiciendis sed a maiores dicta explicabo provident animi necessitatibus possimus!
-               Eum, provident quia ipsa ratione a eveniet repellendus nemo culpa maiores quidem quisquam voluptatem
-               recusandae placeat harum commodi illum tempora, odio possimus laboriosam nam quos dolores unde facilis.
-            </p>
-         </div>
+      <div class="about-text">
+         <h3>About</h3>
+         <p>UWL Nepalese Society was founded in 2022 by Rabin Basnet and a group of Nepalese Students 
+            at UWL. The Society's prior agenda is to be the home to Nepalese students and provide 
+            assistance in terms of career opportunities, mental health, and everyday necessities. Since 
+            then, the society has been actively engaged in various activities to promote the beauty of the 
+            Nepalese cultures, traditions, and beliefs as well as provide assistance regarding mental health 
+            and opportunities to the students at the University of West London.
+         </p>
       </div>
+   </div>
 
-      <!-- upcomming event -->
-      <div class="event">
-         <h2>Upcomming Events</h2>
-         <!-- event box -->
+   <!-- upcomming event -->
+   <div class="event">
+      <h2>Upcoming Events</h2>
+   
+   <div class="containers">
+      {% for x in pics %}
          <div class="event-box">
             <div class="event-box-img">
-               <img src="{% static 'img/new year.jpg' %}" alt="">
+               <img src="{{ x.image.url }}" >
             </div>
             <div class="event-box-text">
-               <h3>New Year!!</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
+               <h3>{{ x.heading }}</h3>
+               <p>{{ x.caption | safe}}</p>
+               <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
             </div>
          </div>
+      {% endfor %}
+   </div>
+</div>
 
-         <div class="event-box">
-            <div class="event-box-img">
-               <img src="{% static 'img/momo.jpg' %}" alt="">
-            </div>
-            <div class="event-box-text">
-               <h3>M & M</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
-            </div>
-         </div>
-
-         <div class="event-box">
-            <div class="event-box-img">
-               <img src="{% static 'img/meet.jpg' %}" alt="">
-            </div>
-            <div class="event-box-text">
-               <h3>Meet and Greet</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit asperiores odit laboriosam
-                  iusto dicta tempora reprehenderit perferendis dolorum? Consequatur laudantium sit maxime quasi non,
-                  optio, asperiores, qui officiis omnis cumque aliquam repellendus temporibus a nam incidunt. Dolor
-                  similique tempora exercitationem error quia dicta voluptatibus dignissimos, autem omnis magnam quidem
-                  beatae maxime soluta, labore voluptas reprehenderit aspernatur corrupti quos? Explicabo.</p>
-               <a href="ruszbaihya.com">Book Now -></a>
-            </div>
-         </div>
-      </div>
-   </section>
-   {% endblock body%}
+</section>
+{% endblock body%}

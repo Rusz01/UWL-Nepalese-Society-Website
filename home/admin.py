@@ -1,7 +1,15 @@
 from django.contrib import admin
-from .models import Members, Member_detail
+from home.models import Event
+from home.models import RecentEvent, Event, Contact, Members, Member_detail
 
 # Register your models here.
+
+# Event and Recent Event
+admin.site.register(Event)
+admin.site.register(RecentEvent)
+
+# Contact admin
+admin.site.register(Contact)
 
 # class to modify the lines
 class ChoiceInline(admin.StackedInline):
