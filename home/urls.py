@@ -9,7 +9,8 @@ urlpatterns = [
     path('event/', views.event, name='event'),
     path('members/', views.members, name='members'),
     path('developer', views.developer, name='developer'),
-    path('member-single', views.memberSingle, name=' '),
+    path('blog/', views.blog, name='blog'),
+    path('member-single', views.memberSingle, name='memberSingle'),
 
 
 
