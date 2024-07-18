@@ -54,6 +54,10 @@ def developer(request):
 def memberSingle(request):
    return render(request, 'member-single.html')
 
-# Board Member Single Page
+# Blog Page
 def blog(request):
    return render(request, 'blog.html')
+
+# Bolog Single Page
+def singleBlog(request):
+   return render(request, 'single-blog.html')

@@ -10,6 +10,7 @@ urlpatterns = [
     path('members/', views.members, name='members'),
     path('developer', views.developer, name='developer'),
     path('blog/', views.blog, name='blog'),
+    path('single-blog/', views.singleBlog, name='single-blog'),
     path('member-single', views.memberSingle, name='memberSingle'),
 
 
