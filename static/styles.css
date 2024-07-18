@@ -14,7 +14,7 @@
    font-family: "Roboto", sans-serif;
 }
 
-a{
+a {
    text-decoration: none;
    color: #333333;
 }
@@ -175,7 +175,7 @@ a{
 
 /* event page > recent events > see more btn */
 
-.all-Event-Btn{
+.all-Event-Btn {
    margin: auto;
    margin-top: 20px;
    width: 200px;
@@ -187,7 +187,7 @@ a{
    padding: 10px;
 }
 
-.all-Event-Btn>a:hover{
+.all-Event-Btn>a:hover {
    color: var(--darkgrey);
 }
 
@@ -275,42 +275,42 @@ a{
    padding-bottom: 25px;
 }
 
-.footer>p>a{
+.footer>p>a {
    color: #BDBDBD;
 }
 
 
 /* member page */
-.member-page{
+.member-page {
    text-align: center;
    padding: 0px 50px;
 }
 
-.member-page > h2{
+.member-page>h2 {
    margin-bottom: 10px;
    font-size: 35px;
 }
 
-.member-page > h4{
+.member-page>h4 {
    font-size: 20px;
    font-weight: 500;
 }
 
-.member-page-cards{
+.member-page-cards {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
    row-gap: 30px;
-   }
+}
 
-.member-card{
+.member-card {
    width: 400px;
    text-align: center;
-} 
+}
 
 
 
-.member-card > a> img{
+.member-card>a>img {
    object-fit: cover;
    border-radius: 50%;
    width: 280px;
@@ -321,29 +321,29 @@ a{
    display: absolute;
 }
 
-.member-details > h3{
+.member-details>h3 {
    margin-bottom: 10px;
 }
 
-.member-details > h4{
+.member-details>h4 {
    opacity: 0.5;
    margin-bottom: 5px;
 }
 
-.social-media-icon > a > img{
+.social-media-icon>a>img {
    width: 20px;
    filter: contrast(0%) brightness(0%);
    padding: 10px 8px 20px 8px;
 }
 
 
-.member-heading-year{
+.member-heading-year {
    margin-top: 20px;
    margin-bottom: 40px;
    font-size: 40px;
 }
 
-.member-page > hr{
+.member-page>hr {
    border: 1px solid var(--black);
    margin-top: 50px;
 }
@@ -436,22 +436,23 @@ a{
 
 /* contact form */
 
-.contact-top{
+.contact-top {
    display: flex;
    gap: 70px;
    padding: 10px 50px;
-justify-content: center;
-padding-bottom: 5px;
+   justify-content: center;
+   padding-bottom: 5px;
 }
 
-.contact-form > h4 {
+.contact-form>h4 {
    font-size: 60px;
    font-weight: 300;
    color: var(--grey);
    margin-bottom: 10px;
 }
 
-.contact-form>form>input, .contact-form>form>textarea{
+.contact-form>form>input,
+.contact-form>form>textarea {
    display: block;
    margin-bottom: 10px;
    padding: 18px 5px;
@@ -465,11 +466,11 @@ padding-bottom: 5px;
    text-indent: 10px;
 }
 
-.contact-img > img{
+.contact-img>img {
    height: 590px;
 }
 
-.contact-form>form>button{
+.contact-form>form>button {
    justify-content: center;
    margin-top: 10px;
    padding: 20px;
@@ -478,7 +479,7 @@ padding-bottom: 5px;
    width: 400px;
 }
 
-.contact-bottom{
+.contact-bottom {
    margin-top: 0px;
    padding: 0px 100px;
    margin: auto;
@@ -486,8 +487,8 @@ padding-bottom: 5px;
    margin-bottom: 10px;
 }
 
-.contact-bottom > iframe{
-   width: 1081px ;
+.contact-bottom>iframe {
+   width: 1081px;
    height: 450px;
 }
 
@@ -495,37 +496,44 @@ padding-bottom: 5px;
 /* Pagination */
 
 .pagination {
-   text-align: center; /* Center the pagination links */
-   margin-bottom: 20px; /* Add margin at the bottom */
+   text-align: center;
+   /* Center the pagination links */
+   margin-bottom: 20px;
+   /* Add margin at the bottom */
 }
 
 .pagination-list {
-   display: inline-block; /* Display pagination links inline */
-   list-style: none; /* Remove default list styling */
+   display: inline-block;
+   /* Display pagination links inline */
+   list-style: none;
+   /* Remove default list styling */
    padding: 0;
 }
 
 .pagination-list li {
    display: inline;
-   margin-right: 5px; /* Adjust spacing between pagination elements */
+   margin-right: 5px;
+   /* Adjust spacing between pagination elements */
 
-   }
+}
 
 .pagination-list li a {
-   font-size: 20px; /* Adjust text size */
+   font-size: 20px;
+   /* Adjust text size */
    color: #333333;
    text-decoration: none;
 }
 
 
 .pagination-list li.active span {
-   font-weight: bold; /* Style for active page number */
+   font-weight: bold;
+   /* Style for active page number */
 }
 
 
 
 /* Developer Team */
-.developer > h2{
+.developer>h2 {
    text-align: center;
    font-weight: 300;
    font-size: 40px;
@@ -533,56 +541,56 @@ padding-bottom: 5px;
    margin-bottom: 40px;
 }
 
-.developer > h2 > span{
+.developer>h2>span {
    font-weight: 500;
    color: var(--black);
 }
 
 
 /* Member Single Page */
-.member-single{
+.member-single {
    padding: 30px;
    display: flex;
    column-gap: 50px;
 }
 
-.member-single-left{
+.member-single-left {
    padding: 50px;
 
 }
 
-.member-single-left>img{
+.member-single-left>img {
    width: 450px;
    height: 450px;
    object-fit: contain;
    display: absolute;
 }
 
-.member-single-right{
+.member-single-right {
    margin-top: auto;
    margin-bottom: auto;
    padding-right: 150px;
 }
 
-.member-single-right>h1{
+.member-single-right>h1 {
    font-size: 45px;
    margin-bottom: 10px;
 }
 
-.member-single-right>h4{
+.member-single-right>h4 {
    opacity: 60%;
    font-size: 20px;
 }
 
-.member-single-right>.social-media-icon{
+.member-single-right>.social-media-icon {
    margin-bottom: 20px;
 }
 
-.member-single-right>p{
+.member-single-right>p {
    font-size: 20px;
 }
 
-.blog{
+.blog {
    padding: 30px;
    display: flex;
    justify-content: center;
@@ -590,7 +598,7 @@ padding-bottom: 5px;
    /* column-gap: 25px; */
 }
 
-.blog-card{
+.blog-card {
    width: 25%;
    margin: 25px 25px;
    border-radius: 0.25rem;
@@ -598,22 +606,22 @@ padding-bottom: 5px;
 }
 
 .blog-card:hover {
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
- }
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
-.blog-card>a>img{
+.blog-card>a>img {
    width: 100%;
 }
 
-.card-text{
+.card-text {
    padding: 20px;
 }
 
-.card-text>h1{
+.card-text>h1 {
    margin-bottom: 8px;
 }
 
-.card-text>p>span{
+.card-text>p>span {
    font-weight: 600;
 }
 
@@ -635,55 +643,68 @@ padding-bottom: 5px;
    padding: 50px;
 }
 
-.single-blog-content-top{
+.single-blog-content-top {
    margin-top: 10px;
 }
 
-.single-blog-content-top>img{
+.single-blog-content-top>img {
    width: 100%;
    height: 350px;
    object-fit: contain;
    display: absolute;
 }
 
-.single-blog-content-top>h1{
+/* CSS of Single Blog Page's Author Section */
+.single-blog-content-bottom{
+   display: flex;
+   margin-top: 35px;
+   gap: 80px;
+}
+
+.single-blog-content-bottom>a>h1, .single-blog-content-bottom>h1{
+   font-size: 16px;
+   opacity: 0.7;
+}
+
+.single-blog-content-top>h1 {
    margin: 40px 0px 20px 0px;
    font-size: 25px;
 }
 
-.single-blog-aside h1:first-child{
+.single-blog-aside h1:first-child {
    margin-bottom: 20px;
    font-size: 30px;
 }
 
-.aside-post{
+.aside-post {
    display: flex;
    gap: 15px;
    margin-bottom: 20px;
 }
 
-.aside-post>.aside-img>img{
+.aside-post>.aside-img>img {
    width: 100px;
 }
 
-.aside-content{
+.aside-content {
    padding-right: 20px;
    display: flex;
    flex-direction: column;
 }
 
-.aside-content>.aside-content-top>h1{
+.aside-content>.aside-content-top>h1 {
    font-size: 16px;
 }
 
-.aside-content-bottom{
+.aside-content-bottom {
    margin-top: auto;
    display: flex;
    justify-content: space-between;
    margin-top: -5px;
 }
 
-.aside-content>.aside-content-bottom>h3,.aside-content>.aside-content-bottom>h4{
+.aside-content>.aside-content-bottom>h3,
+.aside-content>.aside-content-bottom>h4 {
    font-size: 15px;
    font-weight: 600;
    opacity: 0.6;
