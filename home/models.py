@@ -72,4 +72,19 @@ class Member_detail(models.Model):
     def __str__(self):
         return self.name
     
+# creating a model for blog
+class Blog(models.Model):
+
+    # code to insert image, name, title, details and social links
+    id = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to="image")
+    heading = models.CharField(max_length=100,  blank=True, null=True)
+    caption=HTMLField()
+    authorname = models.CharField(max_length=50, blank=True, null=True)
+    authorname_hyperlink = models.URLField(blank=True, null=True)
+    Blog_Created_Date = models.DateTimeField(auto_now_add=True, null = True)
+
+    def __str__(self):
+        return self.heading
+
 

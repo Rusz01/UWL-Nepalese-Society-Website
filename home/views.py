@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from home.models import Event, Members, RecentEvent, Contact, Member_detail
+from home.models import Event, Members, RecentEvent, Contact, Member_detail, Blog
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -54,3 +54,12 @@ def memberSingle(request, image_id):
    member = get_object_or_404(Member_detail, pk=image_id)
    return render(request, 'member-single.html', {'member': member})
    
+# Blog Page
+def blog(request):
+   featured_articles = Blog.objects.all()[:5]  # Get the first 5 articles as featured ones
+   return render(request, 'blog.html',  {'featured_articles': featured_articles})
+
+# Blog Single Page
+def singleblog(request, blog_id):
+   blog = get_object_or_404(Blog, id=blog_id)
+   return render(request, 'single-blog.html',{'blog': blog})

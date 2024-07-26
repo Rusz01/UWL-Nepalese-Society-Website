@@ -9,6 +9,10 @@ urlpatterns = [
     path('event/', views.event, name='event'),
     path('members/', views.members, name='members'),
     path('developer', views.developer, name='developer'),
+    path('blog/', views.blog, name='blog'),
+
+    # For single blog page
+    path('single-blog//<int:blog_id>/', views.singleblog, name='single-blog'),
 
     # For single member page
     path('member/<int:image_id>/', views.memberSingle, name='member-single'),

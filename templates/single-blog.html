@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ blog.heading }}
+{% endblock %}
+
+{% block body %}
+  {% load static %}
+
+  <div class="single-blog">
+    <div class="single-blog-content">
+      <div class="single-blog-content-top">
+        <img src="{{ blog.image.url }}" alt="{{ blog.heading }}" />
+        <h1>{{ blog.heading }}</h1>
+        <p>{{ blog.caption|safe }}</p>
+      </div>
+
+      <div class="single-blog-content-bottom">
+         <a href="{{ blog.authorname_hyperlink }}">
+            <h1>{{ blog.authorname }}</h1>
+         </a>
+            <h1>{{ blog.Blog_Created_Date|date:"Y/m/d" }}</h1>
+      </div>
+    </div>
+  </div>
+{% endblock %}
