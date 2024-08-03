@@ -1,7 +1,6 @@
-{% extends "base.html"%}
-   
-{% block body%}
+{% extends 'base.html' %}
 
+<<<<<<< Updated upstream
 {% load static %}   
    <section class="event-single-page">
       <div class="event-single-page-content">
@@ -28,12 +27,21 @@
          repellat rerum sequi! Suscipit natus ipsa minima! Praesentium dolores, ut libero quas, deleniti eius dolor
          temporibus iste non in sapiente sit maxime veniam corporis fugit quisquam facere dicta labore ab delectus!
       </p>
+=======
+{% block body %}
+  {% load static %}
+  <section class="event-single-page">
+    <div class="event-single-page-content">
+      <h3>{{ single_event.heading }}</h3>
+      <img src="{{ single_event.image.url }}" alt="" />
+      <p>{{ single_event.caption|safe }}</p>
+    </div>
+>>>>>>> Stashed changes
 
-   </div>
-
-   <div class="event-single-page-sidebar">
+    <div class="event-single-page-sidebar">
       <h4>Upcomming Events</h4>
       <div class="sb-ue-events">
+<<<<<<< Updated upstream
          <a href="">
          <img src="{% static 'img/new year.jpg' %}" alt="">
          <h2>New Year</h2>
@@ -45,8 +53,15 @@
          <img src="{% static 'img/meet.jpg' %}" alt="">
          <h2>Meet</h2>
       </a>
+=======
+        {% for x in pics|slice:'2' %}
+          <a href="{{ x.booking_link }}" target="_blank">
+            <img src="{{ x.image.url }}" alt="" />
+            <h2>{{ x.heading }}</h2>
+          </a>
+        {% endfor %}
+>>>>>>> Stashed changes
       </div>
-      
-   </div>
-   </section>
-   {% endblock body%}
+    </div>
+  </section>
+{% endblock %}
