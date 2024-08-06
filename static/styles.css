@@ -315,9 +315,12 @@ a {
    border-radius: 50%;
    width: 280px;
    height: 280px;
+   width: 280px;
+   height: 280px;
    margin-right: auto;
    margin-left: auto;
    margin-bottom: 10px;
+   display: absolute;
    display: absolute;
 }
 
@@ -327,7 +330,7 @@ a {
 
 .member-details>h4 {
    opacity: 0.5;
-   margin-bottom: 5px;
+   margin-bottom: 10px;
 }
 
 .social-media-icon>a>img {
@@ -429,7 +432,9 @@ a {
 
 .sb-ue-events>a>h2 {
    font-size: 20px;
+   font-size: 20px;
    text-align: center;
+   font-weight: 400;
    font-weight: 400;
    margin-top: 5px;
 }

@@ -27,7 +27,7 @@ class RecentEvent(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=20)
     email = models.EmailField()
-    number = models.CharField(max_length=15)    
+    number = models.CharField(max_length=15)
     message = models.TextField()
     
     def __str__ (self):
