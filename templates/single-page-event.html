@@ -5,38 +5,18 @@
   <section class="event-single-page">
     <div class="event-single-page-content">
       <h3>{{ rEvent.heading }}</h3>
-      
-      <!-- Debugging section: Show the count of photos -->
-      <p>Number of photos: {{ photos|length }}</p>
-      
-      <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--Indicators-->
-        <ol class="carousel-indicators">
+
+      <div class="slideshow-container">
         {% for photo in photos %}
-          <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
-        {% endfor %}
-        </ol>
-        <!--/.Indicators-->
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-          {% for photo in photos %}
-          <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-            <img class="d-block w-100" src="{{ photo.images.url }}" alt="Slide {{ forloop.counter }}">
+          <div class="mySlides fade">
+            <img src="{{ photo.images.url }}" alt="" />
           </div>
-          {% endfor %}
-        </div>
-        <!--/.Slides-->
-        <!--Controls-->
-        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        <!--/.Controls-->
+        {% endfor %}
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
+      
       <p>{{ rEvent.caption|safe }}</p>
     </div>
 
@@ -52,4 +32,5 @@
       </div>
     </div>
   </section>
+  <script src="{% static 'scripts.js' %}" defer></script>
 {% endblock %}
