@@ -1,6 +1,6 @@
 from django.contrib import admin
 from home.models import Event
-from home.models import RecentEvent, Event, Contact, Members, Member_detail
+from home.models import RecentEvent, Event, Contact, Members, Member_detail, Blog
 
 # Register your models here.
 
@@ -29,3 +29,5 @@ class Member_detail(admin.ModelAdmin):
     search_fields = ["member_year"]
 
 admin.site.register(Members,  Member_detail)
+
+admin.site.register(Blog)
