@@ -74,15 +74,20 @@ class Member_detail(models.Model):
     
 # creating a model for blog
 class Blog(models.Model):
-
-    # code to insert image, name, title, details and social links
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+    ]
+    
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to="image")
-    heading = models.CharField(max_length=100,  blank=True, null=True)
-    caption=HTMLField()
+    heading = models.CharField(max_length=100, blank=True, null=True)
+    caption = HTMLField()
     authorname = models.CharField(max_length=50, blank=True, null=True)
     authorname_hyperlink = models.URLField(blank=True, null=True)
-    Blog_Created_Date = models.DateTimeField(auto_now_add=True, null = True)
+    blog_created_date = models.DateTimeField(auto_now_add=True, null=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')  # New status field
 
     def __str__(self):
         return self.heading

@@ -1,9 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from home.models import Event, Members, RecentEvent, Contact, Member_detail, Blog
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+from .models import Blog
+from .forms import BlogForm  # Assuming a form for blog submission
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -56,10 +59,25 @@ def memberSingle(request, image_id):
    
 # Blog Page
 def blog(request):
-   featured_articles = Blog.objects.all()[:5]  # Get the first 5 articles as featured ones
-   return render(request, 'blog.html',  {'featured_articles': featured_articles})
+    featured_articles = Blog.objects.filter(status='approved')[:5]  # Only show approved articles
+    return render(request, 'blog.html', {'featured_articles': featured_articles})
 
-# Blog Single Page
+# Single blog page
 def singleblog(request, blog_id):
-   blog = get_object_or_404(Blog, id=blog_id)
-   return render(request, 'single-blog.html',{'blog': blog})
+    blog = get_object_or_404(Blog, id=blog_id, status='approved')  # Ensure only approved blogs can be accessed
+    return render(request, 'single-blog.html', {'blog': blog})
+
+# Submit a new blog post (only for logged-in users)
+@login_required
+def submit_blog(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            blog_post = form.save(commit=False)
+            blog_post.authorname = request.user.username  # Set the author as the logged-in user
+            blog_post.status = 'pending'  # Automatically set the status to pending
+            blog_post.save()
+            return redirect('blog')  # Redirect to blog listing or a success page
+    else:
+        form = BlogForm()
+    return render(request, 'submit_blog.html', {'form': form})
