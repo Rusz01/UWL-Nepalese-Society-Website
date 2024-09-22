@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from home.form import ContactForm
-from home.models import Event, Members, RecentEvent, Contact, Member_detail
+from home.models import Event, Members, RecentEvent, Contact, Member_detail, RecentEventComplete
+
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -54,18 +55,16 @@ def members(request):
     year = Members.objects.all()
     return render(request, 'members.html',{"pics":pics, "year": year})
 
-def singlePageEvent(request, image_id):
-   pics=Event.objects.all()
-   single_event = get_object_or_404(RecentEvent, pk=image_id)
-   return render(request, 'single-page-event.html',{'single_event': single_event, "pics":pics})
+def singlePageEvent_view(request, id):
+   rEvent = get_object_or_404(RecentEvent, id=id)
+   photos = RecentEventComplete.objects.filter(rEvent=rEvent)
+   return render(request, 'single-page-event.html',{'rEvent':rEvent,'photos':photos})
 
 def allRecentEvents(request):
    rimage= RecentEvent.objects.all().order_by('-RecentEventCreatedDate')
    paginator = Paginator(rimage, 2)  # Show 3 events per page
    page_number = request.GET.get('page')
    page_obj = paginator.get_page(page_number)
-   return render(request, 'all-recent-events.html', {'page_obj': page_obj})
-
 # Developer Page
 def developer(request):
    return render(request, 'developer.html')
@@ -82,3 +81,4 @@ def blog(request):
 # Bolog Single Page
 def singleBlog(request):
    return render(request, 'single-blog.html')
+   return render(request, 'all-recent-events.html',{'rimage':rimage, 'page_obj': page_obj})

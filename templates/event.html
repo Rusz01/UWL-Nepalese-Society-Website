@@ -30,15 +30,15 @@
          <h2>Recent Events</h2>
      
      <div class="containers">
-         {% for y in rimage|slice:"3"%}
+         {% for rEvent in rimage|slice:"3"%}
          <div class="event-box">
              <div class="event-box-img">
-                 <img src="{{ y.image.url }}">
+                 <img src="{{ rEvent.image.url }}">
              </div>
              <div class="event-box-text"> <!-- Added closing ">" -->
-                 <h3>{{ y.heading }}</h3>
-                 <p class="lead">{{ y.caption | safe}}</p>
-                 <a href="{% url 'singlePageEvent' image_id=y.id %}">See More -></a>
+                 <h3>{{ rEvent.heading }}</h3>
+                 <p class="lead">{{ rEvent.caption | safe}}</p>
+                 <a href="{% url 'singlePageEvent' rEvent.id %}">See More -></a>
              </div> <!-- Added closing "</div>" -->
          </div>
          {% endfor %}

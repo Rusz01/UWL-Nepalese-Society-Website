@@ -16,7 +16,7 @@ urlpatterns = [
 
 
     # For single event page 
-    path('image/<int:image_id>/', views.singlePageEvent, name='singlePageEvent'),
+    path('<int:id>/', views.singlePageEvent_view, name='singlePageEvent'),
 
     # For all recent event page
     path('allRecentEvents', views.allRecentEvents, name='allRecentEvents'),

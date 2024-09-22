@@ -1,12 +1,14 @@
 from django.contrib import admin
 from home.models import Event
-from home.models import RecentEvent, Event, Contact, Members, Member_detail
+from home.models import RecentEvent, Event, Contact, Members, Member_detail, RecentEventComplete
+
+class RecentEventCompleteAdmin(admin.StackedInline):
+    model = RecentEventComplete
 
 # Register your models here.
 
 # Event and Recent Event
 admin.site.register(Event)
-admin.site.register(RecentEvent)
 
 # Contact admin
 admin.site.register(Contact)
@@ -29,3 +31,14 @@ class Member_detail(admin.ModelAdmin):
     search_fields = ["member_year"]
 
 admin.site.register(Members,  Member_detail)
+
+@admin.register(RecentEvent)
+class RecentEventAdmin(admin.ModelAdmin):
+    inlines = [RecentEventCompleteAdmin]
+
+    class Meta:
+        model = RecentEvent
+
+@admin.register(RecentEventComplete)        
+class RecentEventCompleteAdmin(admin.ModelAdmin):
+    pass
