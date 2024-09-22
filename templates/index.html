@@ -35,13 +35,13 @@
       <div class="event">
          <h2>Upcoming Events</h2>
       
-      <div class="containers">
+      <div class="containers" >
          {% for x in pics %}
             <div class="event-box">
                <div class="event-box-img">
                   <img src="{{ x.image.url }}" >
                </div>
-               <div class="event-box-text">
+               <div class="event-box-text" >
                   <h3>{{ x.heading }}</h3>
                   <p>{{ x.caption | safe}}</p>
                   <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
@@ -50,6 +50,4 @@
          {% endfor %}
       </div>
    </div>
-
-   </section>
    {% endblock body%}

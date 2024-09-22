@@ -1,10 +1,9 @@
 /* var for colors */
 :root {
-   --black: #333333;
-   --white: #ffffff;
-   --grey: #BDBDBD;
-   --darkgrey: #6a6a6a;
-   --bgGrey: #FBFBFB;
+   --black: #2D2413;
+   --bg: #FFFAF0;
+   --primary: #FECE6A;
+   --SecBg: #FFEBC3;
 }
 
 /* for all */
@@ -17,6 +16,10 @@
 a {
    text-decoration: none;
    color: #333333;
+}
+
+body{
+   background: var(--bg);
 }
 
 /* navigations */
@@ -60,7 +63,7 @@ a {
 .home-heading>h1 {
    font-size: 60px;
    font-weight: 300;
-   color: var(--grey);
+   color: var(--primary);
 }
 
 .home-heading>h1 span {
@@ -77,8 +80,8 @@ a {
 .about {
    display: flex;
    margin-top: 20px;
-   padding: 10px 50px;
-   background-color: var(--bgGrey);
+   padding: 30px 50px;
+   background-color: var(--SecBg);
 }
 
 /* home page > about > img */
@@ -90,6 +93,7 @@ a {
       "imgOne imgTwo"
       "imgThree imgTwo";
    width: 650px;
+   align-items: center;
 }
 
 .about-img>img {
@@ -110,7 +114,7 @@ a {
 
 .about-text>h3 {
    font-size: 60px;
-   color: var(--grey);
+   color: var(--primary);
    font-weight: 400;
 }
 
@@ -135,9 +139,9 @@ a {
 
 .event-box {
    display: flex;
-   padding: 10px 0px;
-   background-color: var(--bgGrey);
-   margin: 20px;
+   padding: 13px;
+   background-color: var(--SecBg);
+   margin: 20px 0px;
 }
 
 /* events > img */
@@ -147,8 +151,7 @@ a {
 
 /* events > event text */
 .event-box-text {
-   padding: 0px 20px;
-   margin-left: 50px;
+   margin-left: 60px;
 }
 
 .event-box-text>h3 {
@@ -168,7 +171,7 @@ a {
    text-decoration: none;
    color: var(--black);
    font-size: 20px;
-   background-color: var(--grey);
+   background-color: var(--primary);
    padding: 10px;
    margin-top: 15px;
 }
@@ -187,14 +190,10 @@ a {
    padding: 10px;
 }
 
-.all-Event-Btn>a:hover {
-   color: var(--darkgrey);
-}
-
 /* footer */
 .footer {
    background-color: var(--black);
-   color: var(--white);
+   color: var(--bg);
 }
 
 .footer-top {
@@ -271,7 +270,7 @@ a {
    margin-top: 20px;
    font-size: 15px;
    text-align: center;
-   color: var(--grey);
+   color: var(--primary);
    padding-bottom: 25px;
 }
 
@@ -452,7 +451,7 @@ a {
 .contact-form>h4 {
    font-size: 60px;
    font-weight: 300;
-   color: var(--grey);
+   color: var(--primary);
    margin-bottom: 10px;
 }
 
@@ -480,7 +479,7 @@ a {
    margin-top: 10px;
    padding: 20px;
    background-color: var(--black);
-   color: var(--bgGrey);
+   color: var(--SecBg);
    width: 400px;
 }
 
@@ -606,6 +605,7 @@ a {
 .blog-card {
    width: 25%;
    margin: 25px 25px;
+   background-color: var(--SecBg);
    border-radius: 0.25rem;
    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 }
