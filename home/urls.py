@@ -10,13 +10,14 @@ urlpatterns = [
     path('members/', views.members, name='members'),
     path('developer', views.developer, name='developer'),
     path('blog/', views.blog, name='blog'),
-    path('single-blog/', views.singleBlog, name='single-blog'),
-    path('member-single', views.memberSingle, name='memberSingle'),
-
-
-
     # For single event page 
     path('<int:id>/', views.singlePageEvent_view, name='singlePageEvent'),
+
+    # For single blog page
+    path('single-blog//<int:blog_id>/', views.singleblog, name='single-blog'),
+
+    # For single member page
+    path('member/<int:image_id>/', views.memberSingle, name='member-single'),
 
     # For all recent event page
     path('allRecentEvents', views.allRecentEvents, name='allRecentEvents'),

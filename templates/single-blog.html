@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  Home
+{{ blog.heading }}
 {% endblock %}
 
 {% block body %}
@@ -10,112 +10,17 @@
   <div class="single-blog">
     <div class="single-blog-content">
       <div class="single-blog-content-top">
-        <img src="{% static 'img/team.jpg' %}" alt="" />
-        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ex.</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quasi consequatur ad voluptatem iusto! Impedit dolores assumenda facilis eos ab, laudantium dolore dicta temporibus excepturi iusto molestias aliquid omnis, facere quia a at! Aliquid nobis facilis facere, obcaecati mollitia molestias enim ipsa praesentium voluptate corrupti aspernatur accusantium iure exercitationem ut voluptatem atque corporis assumenda tempore. Ab doloribus neque in minima sint facilis magnam! Mollitia, enim at. Quibusdam veritatis tempore labore exercitationem sit, laudantium reprehenderit assumenda ad atque nemo optio est enim repellendus perferendis repellat amet perspiciatis vitae excepturi ullam provident eveniet aliquam, veniam nobis!
-          <br /> <br />
-          Quas veritatis atque, facere quos fuga reiciendis molestiae nihil ipsam alias non est pariatur obcaecati, porro odit dicta earum quis quaerat omnis provident fugit blanditiis similique. Corporis, magni reprehenderit. Vel inventore quidem fuga ab. Ad, provident, atque reprehenderit voluptatibus a voluptate accusantium blanditiis earum tempore inventore harum explicabo nisi? Earum repudiandae veritatis, esse in veniam cum nostrum amet. Eum assumenda odio placeat? Ipsa, alias minus dolor culpa fugit, praesentium est id saepe assumenda corrupti, consectetur dolores explicabo consequatur beatae veniam facere. Ut consectetur ad expedita? Quae enim quisquam voluptatum cumque ad placeat qui. Fugit aspernatur iste accusamus eum neque, quos quod in maxime corporis placeat vitae quia culpa repudiandae modi earum sint? Ducimus at deserunt eaque, quibusdam repellendus accusantium. Et neque perspiciatis veniam nisi optio exercitationem maiores minima? Facilis tempora repudiandae illo,
-          <br /> <br />
-          odio nulla at. Aliquid commodi laborum delectus error dolore, nulla odit reprehenderit mollitia facere similique magni, fugiat eius! Doloribus illum deserunt quidem ipsam cupiditate!
-        </p>
+        <img src="{{ blog.image.url }}" alt="{{ blog.heading }}" />
+        <h1>{{ blog.heading }}</h1>
+        <p>{{ blog.caption|safe }}</p>
       </div>
 
       <div class="single-blog-content-bottom">
-         <a href="">
-            <h1>Author Name</h1>
+         <a href="{{ blog.authorname_hyperlink }}">
+            <h1>{{ blog.authorname }}</h1>
          </a>
-            <h1>2002/10/11</h1>
+            <h1>{{ blog.Blog_Created_Date|date:"Y/m/d" }}</h1>
       </div>
-    </div>
-
-    <div class="single-blog-aside">
-      <h1>Featured Articles</h1>
-
-      <a href="/blog">
-        <div class="aside-post">
-          <div class="aside-img">
-            <img src="{% static 'img/team.jpg' %}" alt="" />
-          </div>
-          <div class="aside-content">
-            <div class="aside-content-top">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, illum?</h1>
-            </div>
-            <div class="aside-content-bottom">
-              <h3>Name</h3>
-              <h4>2002/02/02</h4>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blog">
-        <div class="aside-post">
-          <div class="aside-img">
-            <img src="{% static 'img/team.jpg' %}" alt="" />
-          </div>
-          <div class="aside-content">
-            <div class="aside-content-top">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, illum?</h1>
-            </div>
-            <div class="aside-content-bottom">
-              <h3>Name</h3>
-              <h4>2002/02/02</h4>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blog">
-        <div class="aside-post">
-          <div class="aside-img">
-            <img src="{% static 'img/team.jpg' %}" alt="" />
-          </div>
-          <div class="aside-content">
-            <div class="aside-content-top">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, illum?</h1>
-            </div>
-            <div class="aside-content-bottom">
-              <h3>Name</h3>
-              <h4>2002/02/02</h4>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blog">
-        <div class="aside-post">
-          <div class="aside-img">
-            <img src="{% static 'img/team.jpg' %}" alt="" />
-          </div>
-          <div class="aside-content">
-            <div class="aside-content-top">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, illum?</h1>
-            </div>
-            <div class="aside-content-bottom">
-              <h3>Name</h3>
-              <h4>2002/02/02</h4>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="/blog">
-        <div class="aside-post">
-          <div class="aside-img">
-            <img src="{% static 'img/team.jpg' %}" alt="" />
-          </div>
-          <div class="aside-content">
-            <div class="aside-content-top">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, illum?</h1>
-            </div>
-            <div class="aside-content-bottom">
-              <h3>Name</h3>
-              <h4>2002/02/02</h4>
-            </div>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
 {% endblock %}

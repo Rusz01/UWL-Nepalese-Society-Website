@@ -1,6 +1,6 @@
 from django.contrib import admin
 from home.models import Event
-from home.models import RecentEvent, Event, Contact, Members, Member_detail, RecentEventComplete
+from home.models import RecentEvent, Event, Contact, Members, Member_detail, RecentEventComplete, Blog
 
 class RecentEventCompleteAdmin(admin.StackedInline):
     model = RecentEventComplete
@@ -42,3 +42,26 @@ class RecentEventAdmin(admin.ModelAdmin):
 @admin.register(RecentEventComplete)        
 class RecentEventCompleteAdmin(admin.ModelAdmin):
     pass
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('heading', 'authorname', 'status', 'blog_created_date')
+    list_filter = ('status', 'authorname')
+    search_fields = ('heading', 'caption')
+    
+    def get_readonly_fields(self, request, obj=None):
+        if not request.user.is_superuser:
+            return ['status']  # Non-superusers can't change the status
+        return self.readonly_fields
+
+    def approve_post(self, request, queryset):
+        queryset.update(status='approved')
+    approve_post.short_description = "Approve selected posts"
+
+    def reject_post(self, request, queryset):
+        queryset.update(status='rejected')
+    reject_post.short_description = "Reject selected posts"
+
+    actions = [approve_post, reject_post]
+
+admin.site.register(Blog, BlogAdmin)
+
+
