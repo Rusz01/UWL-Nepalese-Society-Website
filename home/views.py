@@ -64,11 +64,12 @@ def singlePageEvent_view(request, id):
    return render(request, 'single-page-event.html',{'rEvent':rEvent,'photos':photos})
 
 def allRecentEvents(request):
-   rimage= RecentEvent.objects.all().order_by('-RecentEventCreatedDate')
-   paginator = Paginator(rimage, 2)  # Show 3 events per page
-   page_number = request.GET.get('page')
-   page_obj = paginator.get_page(page_number)
-   return render(request, 'all-recent-events.html', {'page_obj': page_obj})
+    rimage = RecentEvent.objects.all().order_by('-RecentEventCreatedDate')
+    paginator = Paginator(rimage, 2)  # Show 2 events per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'all-recent-events.html', {'page_obj': page_obj})
+
 
 # Developer Page
 def developer(request):
