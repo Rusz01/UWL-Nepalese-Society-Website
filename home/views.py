@@ -59,9 +59,10 @@ def members(request):
     return render(request, 'members.html',{"pics":pics, "year": year})
 
 def singlePageEvent_view(request, id):
+   pics=Event.objects.all().order_by('-EventCreatedDate')
    rEvent = get_object_or_404(RecentEvent, id=id)
    photos = RecentEventComplete.objects.filter(rEvent=rEvent)
-   return render(request, 'single-page-event.html',{'rEvent':rEvent,'photos':photos})
+   return render(request, 'single-page-event.html',{'rEvent':rEvent,'photos':photos, "pics": pics})
 
 def allRecentEvents(request):
     rimage = RecentEvent.objects.all().order_by('-RecentEventCreatedDate')
