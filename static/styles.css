@@ -716,13 +716,13 @@ body{
 
 .single-blog-aside {
    grid-area: aside;
-   width: 480px;
+   max-width: 480px;
 }
 
 .single-blog {
    display: grid;
    grid-template-areas:
-      'content content content aside aside aside';
+      'content content content content content aside';
    gap: 28px;
    padding: 50px;
 }
@@ -763,7 +763,7 @@ body{
 .aside-post {
    display: flex;
    gap: 15px;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
 }
 
 .aside-post>.aside-img>img {

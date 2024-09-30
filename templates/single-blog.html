@@ -22,5 +22,27 @@
             <h1>{{ blog.Blog_Created_Date|date:"Y/m/d" }}</h1>
       </div>
     </div>
+
+    <div class="single-blog-aside">
+        <h1>Featured Articles</h1>
+        {% for blog in featured_articles %}
+        <a href="{% url 'single-blog' blog.id %}">
+            <div class="aside-post">
+                <div class="aside-img">
+                    <img src="{{ blog.image.url }}" alt="{{ blog.heading }}" alt="" />
+                </div>
+                <div class="aside-content">
+                    <div class="aside-content-top">
+                        <h1>{{ blog.heading }}</h1>
+                    </div>
+                    <div class="aside-content-bottom">
+                        <h3>{{ blog.authorname }}</h3>
+                        <h4>{{ blog.Blog_Created_Date|date:"Y/m/d" }}</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
   </div>
 {% endblock %}

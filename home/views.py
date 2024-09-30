@@ -89,7 +89,8 @@ def blog(request):
 # Single blog page
 def singleblog(request, blog_id):
     blog = get_object_or_404(Blog, id=blog_id, status='approved')  # Ensure only approved blogs can be accessed
-    return render(request, 'single-blog.html', {'blog': blog})
+    featured_articles = Blog.objects.filter(status='approved')[:5]  # Only show approved articles
+    return render(request, 'single-blog.html', {'blog': blog, 'featured_articles': featured_articles})
 
 # Submit a new blog post (only for logged-in users)
 @login_required
