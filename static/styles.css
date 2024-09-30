@@ -712,11 +712,12 @@ body{
 /* ---- Single Event Page ---- */
 .single-blog-content {
    grid-area: content;
+   min-width: calc(100vw - 590px);
 }
 
 .single-blog-aside {
    grid-area: aside;
-   max-width: 480px;
+   min-width: 350px;
 }
 
 .single-blog {
