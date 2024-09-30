@@ -1,50 +1,54 @@
-{% extends "base.html"%}
+{% extends 'base.html' %}
 
-{% block title%}Events{% endblock title%}
+{% block title %}
+  Events
+{% endblock %}
 
-{% block body%}
-
-{% load static %}
-<section>
-
-   <!-- upcomming event -->
-   <div class="event">
+{% block body %}
+  {% load static %}
+  <section>
+    <!-- upcomming event -->
+    <div class="event">
       <h2>Upcoming Events</h2>
-   </div>
-   <div class="containers">
+    </div>
+    <div class="containers">
       {% for x in pics %}
-         <div class="event-box">
+        <div class="event-box">
+          <div class="event-box-img">
+            <img src="{{ x.image.url }}" alt="" />
+          </div>
+          <div class="event-box-text">
+            <h3>{{ x.heading }}</h3>
+            <p>{{ x.caption|safe }}</p>
+            <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="event">
+      <h2>Recent Events</h2>
+
+      <div class="containers">
+        {% for rEvent in rimage|slice:'3' %}
+          <div class="event-box">
             <div class="event-box-img">
-               <img src="{{ x.image.url }}" alt="">
+              <img src="{{ rEvent.image.url }}" />
             </div>
             <div class="event-box-text">
-               <h3>{{ x.heading }}</h3>
-               <p>{{ x.caption | safe }}</p>
-               <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
-            </div>
-         </div>
-      {% endfor %}
-   </div>
+              <!-- Added closing ">" -->
+              <h3>{{ rEvent.heading }}</h3>
+              <p class="lead">{{ rEvent.caption|slice:':100'|safe }}</p>
+              <a href="{% url 'singlePageEvent' rEvent.id %}">See More -></a>
+            </div> <!-- Added closing "</div>" -->
+          </div>
+        {% endfor %}
 
-      <div class="event">
-         <h2>Recent Events</h2>
-     </div>
-     <div class="containers">
-         {% for rEvent in rimage|slice:"3"%}
-         <div class="event-box">
-             <div class="event-box-img">
-                 <img src="{{ rEvent.image.url }}">
-             </div>
-             <div class="event-box-text"> <!-- Added closing ">" -->
-                 <h3>{{ rEvent.heading }}</h3>
-                 <p class="lead">{{ rEvent.caption |slice:":100"| safe}}</p>
-                 <a href="{% url 'singlePageEvent' rEvent.id %}">See More -></a>
-             </div> <!-- Added closing "</div>" -->
-         </div>
-         {% endfor %}
+        
+      </div>
+      <div class="all-Event-Btn">
          <a href="{% url 'allRecentEvents' %}">View All</a> <!-- Link to 'allRecentEvents' HTML page -->
-     </div>
-
-   </div>
-</section>
-{% endblock body%}
+       </div>
+    </div>
+  </section>
+{% endblock %}

@@ -180,14 +180,15 @@ body{
 
 .all-Event-Btn {
    margin: auto;
-   margin-top: 20px;
+   margin-top: 40px;
    width: 200px;
 }
 
 .all-Event-Btn>a {
    color: var(--black);
    font-size: 20px;
-   padding: 10px;
+   padding: 10px 20px;
+   background-color: var(--primary);
 }
 
 /* footer */
