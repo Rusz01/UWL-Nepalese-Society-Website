@@ -17,7 +17,7 @@
           {% for x in pics %}
             {% if x.date_year == y.member_year %}
               <div class="member-card">
-                <a href="/member-single">
+                <a href="{% url 'member-single' image_id=x.id %}">
                 <img src="{{ x.image.url }}" alt="" />
                 <div class="member-details">
                   <h3>{{ x.name }}</h3>

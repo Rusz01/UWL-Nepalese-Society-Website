@@ -277,6 +277,7 @@ body{
 
 .footer>p>a {
    color: #BDBDBD;
+   text-decoration: underline;
 }
 
 
@@ -310,7 +311,7 @@ body{
 
 
 
-.member-card>a>img {
+.member-card>a>img, .member-card>img {
    object-fit: cover;
    border-radius: 50%;
    width: 280px;
@@ -715,7 +716,7 @@ body{
    min-width: calc(100vw - 590px);
 }
 
-.single-blog-aside {
+.single-pyblog-aside {
    grid-area: aside;
    min-width: 350px;
 }
