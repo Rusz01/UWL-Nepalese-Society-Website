@@ -17,12 +17,15 @@
         <h1>{{ member.name }}</h1>
         <h4>{{ member.title }}</h4>
 
-            <div class="social-media-icon">
-            <a href="{{ x.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram" /></a>
-
-            <a href="{{ x.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn" /></a>
+        <div class="social-media-icon">
+            {% if member.instagram_link %}
+              <a href="{{ member.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram" /></a>
+            {% endif %}
+            {% if member.linkedln_link %}
+              <a href="{{ member.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn" /></a>
+            {% endif %}
             <hr>
-        </div>
+          </div>
             
         <p>{{ member.details_text }}</p>
 
