@@ -689,6 +689,8 @@ body {
    font-size: 20px;
 }
 
+/* BLOG Page */
+
 .blog {
    padding: 30px;
    display: flex;
@@ -1086,6 +1088,80 @@ body {
    font-size: 14px; 
    padding: 12px;
    background-color: #FFFAF0;
+}
+
+.blog-card {
+   width: 100%; /* 1 card per row on mobile */
+   margin: 15px 0; /* Adjust margins for better spacing */
+}
+
+
+.single-blog {
+   grid-template-areas:
+      'content'
+      'aside';
+   gap: 20px;
+   padding: 20px;
+}
+
+/* Adjust the width of the main content and sidebar */
+.single-blog-content {
+   min-width: 100%;
+}
+
+.single-blog-aside {
+   min-width: 100%;
+}
+
+/* Adjust image sizes for mobile */
+.single-blog-content-top > img {
+   height: auto;
+   max-width: 100%;
+}
+
+/* Adjust heading size for mobile */
+.single-blog-content-top > h1 {
+   font-size: 22px;
+}
+
+.single-blog-content-bottom {
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.single-blog-content-bottom > h1 {
+   font-size: 14px;
+}
+
+/* Adjust aside-post styles */
+.aside-post {
+   display: flex;
+   gap: 15px;
+}
+
+.aside-post > .aside-img > img {
+   width: 80px;
+}
+
+.aside-content {
+   padding-right: 0;
+}
+
+.aside-content > .aside-content-top > h1 {
+   font-size: 14px;
+}
+
+.aside-content-bottom {
+   margin-top: 10px;
+   display: block;
+}
+
+.aside-content > .aside-content-bottom > h3,
+.aside-content > .aside-content-bottom > h4 {
+   font-size: 13px;
+   font-weight: 600;
+   opacity: 0.6;
 }
 
 }
