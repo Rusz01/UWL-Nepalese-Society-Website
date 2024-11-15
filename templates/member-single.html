@@ -1,35 +1,34 @@
-{% extends "base.html"%}
+{% extends 'base.html' %}
 
-{% block title%}Single Page{% endblock %}
+{% block title %}
+  Single Page
+{% endblock %}
 
-{% block body%}
+{% block body %}
+  {% load static %}
 
-   {% load static %}  
-   
-<section class="member-single">
-    <div class="member-page-cards">          
+  <section class="member-single">
+    <div class="single-member-page-cards">
+      <div class="member-single-left">
+        <img src="{{ member.image.url }}" alt="{{ member.name }}" />
+      </div>
 
-        <div class="member-single-left">
-            <img src="{{ member.image.url }}" alt="{{ member.name }}">
-        </div>
-
-        <div class="member-single-right">
+      <div class="member-single-right">
         <h1>{{ member.name }}</h1>
         <h4>{{ member.title }}</h4>
 
         <div class="social-media-icon">
-            {% if member.instagram_link %}
-              <a href="{{ member.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram" /></a>
-            {% endif %}
-            {% if member.linkedln_link %}
-              <a href="{{ member.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn" /></a>
-            {% endif %}
-            <hr>
-          </div>
-            
+          {% if member.instagram_link %}
+            <a href="{{ member.instagram_link }}"><img src="{% static 'img/instagram.png' %}" alt="Instagram" /></a>
+          {% endif %}
+          {% if member.linkedln_link %}
+            <a href="{{ member.linkedln_link }}"><img src="{% static 'img/linkedin.png' %}" alt="LinkedIn" /></a>
+          {% endif %}
+          <hr />
+        </div>
+
         <p>{{ member.details_text }}</p>
-
-    </div> 
-</section> 
-
+      </div>
+    </div>
+  </section>
 {% endblock %}

@@ -645,10 +645,10 @@ body {
 
 
 /* Member Single Page */
-.member-single {
+.single-member-page-cards {
    padding: 30px;
    display: flex;
-   column-gap: 50px;
+   column-gap: 20px;
 }
 
 .member-single-left {
@@ -673,7 +673,7 @@ body {
    font-size: 45px;
    margin-bottom: 10px;
 }
-
+ 
 .member-single-right>h4 {
    opacity: 60%;
    font-size: 20px;
@@ -1205,6 +1205,39 @@ body {
    margin-left: auto;
    margin-bottom: 10px;
    display: absolute;
+}
+
+/* Member Single Page */
+.single-member-page-cards {
+   display: block;
+}
+
+.member-single-left {
+   padding: 0;
+   margin-bottom: 20px; 
+}
+
+.member-single-left>img {
+   width: 100%; 
+   height: auto;
+   max-width: 350px;
+}
+
+.member-single-right {
+   padding-right: 0;
+   text-align: center;
+}
+
+.member-single-right>h1 {
+   font-size: 30px;
+}
+
+.member-single-right>h4 {
+   font-size: 18px;
+}
+
+.member-single-right>p {
+   font-size: 16px;
 }
 
 
