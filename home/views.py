@@ -83,7 +83,7 @@ def memberSingle(request, image_id):
    
 # Blog Page
 def blog(request):
-    featured_articles = Blog.objects.filter(status='approved')[:5]  # Only show approved articles
+    featured_articles = Blog.objects.filter(status='approved').order_by('-blog_created_date')[:5]  # Only show approved articles
     return render(request, 'blog.html', {'featured_articles': featured_articles})
 
 # Single blog page
