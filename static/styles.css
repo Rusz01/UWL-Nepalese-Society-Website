@@ -422,7 +422,7 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-   background-color: rgba(0, 0, 0, 0.8);
+   background-color: #f3e9d7;
 }
 
 /* Caption text */
@@ -1043,8 +1043,49 @@ body {
    font-size: 16px;
    padding: 8px 10px;
    display: inline-block; 
-   margin: 10px 0; /* Add spacing around the link */
-   position: relative; /* Reset position for responsiveness */
+   margin: 10px 0; 
+   position: relative;
+}
+
+.event-single-page {
+   grid-template-areas:
+      'content';
+   gap: 10px;
+   padding: 10px;
+}
+
+/* Hide the sidebar */
+.event-single-page-sidebar {
+   display: none;
+}
+
+/* Adjust the content section for smaller screens */
+.event-single-page-content {
+   padding: 15px; 
+}
+
+.event-single-page-content>h3 {
+   font-size: 40px; 
+   padding: 0 10px; 
+}
+
+.event-single-page-content>p {
+   font-size: 16px;
+   padding: 0 20px;
+}
+
+/* Slideshow images responsiveness */
+.mySlides>img {
+   width: 100%; 
+   max-height: auto;
+   object-fit: contain; 
+}
+
+.prev,
+.next {
+   font-size: 14px; 
+   padding: 12px;
+   background-color: #FFFAF0;
 }
 
 }
