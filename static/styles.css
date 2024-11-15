@@ -52,6 +52,51 @@ body{
    color: var(--black);
 }
 
+.hamburger{
+   display: none;
+}
+
+
+/* Responsive styles for Mobile */
+@media screen and (max-width: 768px) {
+
+   .nav{
+      padding: 10px 20px 10px 20px;
+   }
+
+   .nav-img {
+      height: 55px;
+   }
+
+   .nav-list {
+      display: none;  /* Hide the nav items by default on mobile */
+      flex-direction: column;  /* Stack them vertically */
+      width: 100%;  /* Make the menu take full width */
+      background-color: #fff;  /* Optional: Add a background color */
+      position: absolute;
+      top: 80px;  /* Adjust based on your navbar height */
+      left: 0;
+      z-index: 1000;
+   }
+
+   .nav-list.active {
+      display: flex;  /* Show the nav items when active */
+   }
+
+   .nav-list > li {
+      margin-left: 0;  /* Remove the left margin for stacked items */
+      padding: 10px 20px;
+      font-size: 16px;  /* Adjust font size for mobile */
+   }
+
+   .hamburger {
+      display: block;  /* Show the hamburger icon on smaller screens */
+   }
+}
+
+/* Home Heading */
+
+
 .home-heading {
    padding: 0px 80px;
    display: flex;
@@ -278,6 +323,82 @@ body{
 .footer>p>a {
    color: #BDBDBD;
    text-decoration: underline;
+}
+
+/* Responsive for footer */
+
+@media screen and (max-width: 768px) {
+
+   .footer-top{
+      display: block;
+      padding: 25px 20px;
+
+   }
+
+   .footer-left{
+      align-items: center;
+      float: left;
+      margin-right: 30px;
+   }
+
+
+   .footer-left-nepsoc>img,
+.footer-left-logo>img {
+   width: 60px;
+}
+
+   .footer-left-nepsoc>img {
+      border-radius: 100%;
+   }
+   
+   .footer-left-logo>img {
+      display: block;
+      padding: 15px 20px;
+   }
+
+   .footer-middle>h4,
+.footer-right>h4 {
+   font-size: 12px;
+   font-weight: 400;
+   margin-bottom: 15px;
+}
+
+
+
+.footer-contact-img>img {
+   width: 10px;
+   margin-right: 10px;
+}
+
+.footer-contact-text>p {
+   font-size: 8px;
+}
+
+.footer-right>a>img {
+   width: 15px;
+   margin-top: 5px;
+}
+
+.footer-contact {
+   display: flex;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.footer-right{
+text-align: center;
+}
+
+.footer-right>h4{
+margin-bottom: 5px;
+margin-top: 20px;
+}
+
+
+.footer>p {
+   font-size: 9px;
+}
+
 }
 
 
@@ -807,4 +928,17 @@ body{
 .errorPage>h1{
    margin-top: 15%;
    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+   .home-heading {
+      display: block;
+      padding: 0px 10px;
+   }
+
+   .home-heading>h1{
+      font-size: 30px;
+      text-align: center;
+   }
 }

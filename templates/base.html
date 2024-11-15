@@ -22,6 +22,9 @@
       <!-- navigation -->
       <nav class="nav">
          <img class="nav-img" src="{% static 'img/logo-bg-remove.png' %}" alt="Logo of Nepalese Society">
+
+           <!-- Hamburger icon for mobile view -->
+   <div class="hamburger" onclick="toggleNav()">&#9776;</div>
          <ul class="nav-list">
             <li><a href="/">Home</a></li>
             <li><a href="/event/">Event</a></li>
@@ -31,12 +34,18 @@
          </ul>
       </nav>
 
-      {% block body%}
-      {% endblock body%}
+      {% comment %} {% block body%}
+      {% endblock body%} {% endcomment %}
 
                <!-- icons -->
    <script  src="https://kit.fontawesome.com/e7bf9fbc6f.js" crossorigin="anonymous"></script>
 
+   <script>
+      function toggleNav() {
+         const navList = document.querySelector('.nav-list');
+         navList.classList.toggle('active');
+      }
+   </script>
 </body>
 
       <!-- footer -->
@@ -62,7 +71,7 @@
                      <img src="{% static 'img/location.png' %}" alt="">
                   </div>
                   <div class="footer-contact-text">
-                     <p>University of London</p>
+                     <p>University of West London</p>
                      <p class="footer-mt">Ealing Broadway</p>
                      <p class="footer-mt">AN13 7SC</p>
                   </div>
