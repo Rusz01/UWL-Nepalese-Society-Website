@@ -1,54 +1,48 @@
-{% extends "base.html"%}
+{% extends 'base.html' %}
 
-{% block title%}Home{% endblock title%}
+{% block title %}
+  Home
+{% endblock %}
 
-{% block body%}
+{% block body %}
+  {% load static %}
+  <!-- home body -->
+  <!-- top part -->
+  <div class="home-heading">
+    <h1>UWL<br /> <span>Nepalese <br /> Scoiety</span></h1>
+    <img src="{% static 'img/team.jpeg' %}" alt="Picture of UWL Nepalese Society Board Members" />
+  </div>
 
-   {% load static %}   
-   <!-- home body -->
-      <!-- top part -->
-      <div class="home-heading">
-         <h1>UWL<br> <span>Nepalese <br> Scoiety</span></h1>
-         <img src="{% static 'img/team.jpeg' %}" alt="Picture of UWL Nepalese Society Board Members">
-      </div>
+  <!-- about part -->
+  <div class="about">
+    <div class="about-img">
+      <img src="{% static 'img/teamThree.jpeg' %}" alt="" />
+      <img src="{% static 'img/about-team-potrait.jpg' %}" alt="" />
+      <img src="{% static 'img/DashainTihar2023.jpg' %}" alt="" />
+    </div>
+    <div class="about-text">
+      <h3>About</h3>
+      <p>UWL Nepalese Society was founded in 2022 by Rabin Basnet and a group of Nepalese Students at UWL. The Society's prior agenda is to be the home to Nepalese students and provide assistance in terms of career opportunities, mental health, and everyday necessities. Since then, the society has been actively engaged in various activities to promote the beauty of the Nepalese cultures, traditions, and beliefs as well as provide assistance regarding mental health and opportunities to the students at the University of West London.</p>
+    </div>
+  </div>
 
-      <!-- about part -->
-      <div class="about">
-         <div class="about-img">
-            <img src="{% static 'img/teamThree.jpeg' %}" alt="">
-            <img src="{% static 'img/about-team-potrait.jpg' %}" alt="">
-            <img src="{% static 'img/DashainTihar2023.jpg' %}" alt="">
-         </div>
-         <div class="about-text">
-            <h3>About</h3>
-            <p>UWL Nepalese Society was founded in 2022 by Rabin Basnet and a group of Nepalese Students 
-               at UWL. The Society's prior agenda is to be the home to Nepalese students and provide 
-               assistance in terms of career opportunities, mental health, and everyday necessities. Since 
-               then, the society has been actively engaged in various activities to promote the beauty of the 
-               Nepalese cultures, traditions, and beliefs as well as provide assistance regarding mental health 
-               and opportunities to the students at the University of West London.
-            </p>
-         </div>
-      </div>
-   </div>
+  <!-- upcomming event -->
+  <div class="event">
+    <h2>Upcoming Events</h2>
 
-      <!-- upcomming event -->
-      <div class="event">
-         <h2>Upcoming Events</h2>
-      
-      <div class="containers" >
-         {% for x in pics %}
-            <div class="event-box">
-               <div class="event-box-img">
-                  <img src="{{ x.image.url }}" >
-               </div>
-               <div class="event-box-text" >
-                  <h3>{{ x.heading }}</h3>
-                  <p>{{ x.caption | safe}}</p>
-                  <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
-               </div>
-            </div>
-         {% endfor %}
-      </div>
-   </div>
-   {% endblock body%}
+    <div class="containers">
+      {% for x in pics %}
+        <div class="event-box">
+          <div class="event-box-img">
+            <img src="{{ x.image.url }}" />
+          </div>
+          <div class="event-box-text">
+            <h3>{{ x.heading }}</h3>
+            <p>{{ x.caption|safe }}</p>
+            <a href="{{ x.booking_link }}" target="_blank">Book Now -></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
