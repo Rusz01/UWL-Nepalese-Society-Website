@@ -50,7 +50,6 @@ Acting as both **lead developer** and **project manager**, the site was built us
 - **Backend**: Python, Django  
 - **Frontend**: HTML5, CSS3, JavaScript  
 - **Database**: SQLite3  
-- **Deployment**: (Add your hosting info—Heroku, DigitalOcean, etc.)
 
 ---
 
