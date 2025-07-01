@@ -31,7 +31,7 @@ This site was developed by Rusz Baidhya and team for the Nepalese Society at UWL
 - Dynamic **member profiles**
 - Integrated **blog** area for community contributions
 
-Acting as both **lead developer** and **project manager**, the site was built using Python/Django, with a custom responsive frontend. The project followed a structured Waterfall methodology from requirement gathering through deployment :contentReference[oaicite:1]{index=1}.
+Acting as both **lead developer** and **project manager**, the site was built using Python/Django, with a custom responsive frontend. The project followed a structured Waterfall methodology from requirement gathering through deployment.
 
 ---
 
