@@ -1,4 +1,4 @@
-# UWL Nepalese Society Website 🏛️
+# UWL Nepalese Society Website
 
 A Django-based website for the University of West London’s Nepalese Society, showcasing events, blog posts, and member profiles.
 
